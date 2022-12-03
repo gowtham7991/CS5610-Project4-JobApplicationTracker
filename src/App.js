@@ -6,6 +6,7 @@ import RecruiterComponent from "./app/recruiter"
 import AdminComponent from "./app/admin"
 import Home from "./app/home/index"
 import LoginComponent from "./app/login"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
