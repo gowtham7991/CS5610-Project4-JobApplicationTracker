@@ -4,7 +4,7 @@ import {Routes, Route} from "react-router";
 import StudentComponent from "./app/student"
 import RecruiterComponent from "./app/recruiter"
 import AdminComponent from "./app/admin"
-import Home from "./app/index"
+import Home from "./app/home/index"
 import LoginComponent from "./app/login"
 
 function App() {
