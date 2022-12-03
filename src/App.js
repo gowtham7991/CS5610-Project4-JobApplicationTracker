@@ -1,4 +1,6 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 import {BrowserRouter} from "react-router-dom";
 import {Routes, Route} from "react-router";
 import StudentComponent from "./app/student"
@@ -10,7 +12,6 @@ import LoginComponent from "./app/login"
 function App() {
   return (
     <BrowserRouter>
-      <div className="container">
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/student/*"
@@ -20,7 +21,6 @@ function App() {
           <Route path="/admin/*" element={<AdminComponent/>}/>
           <Route path="/login" element={<LoginComponent/>}/>
         </Routes>
-      </div>
     </BrowserRouter>
   );
 }
