@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.idea/CS5610-Project4-JobApplicationTracker.iml
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
