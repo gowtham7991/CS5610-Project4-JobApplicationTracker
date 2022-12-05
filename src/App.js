@@ -13,7 +13,8 @@ import JobsComponent from "./app/jobs"
 
 function App() {
   return (
-    <BrowserRouter>
+    <div className='App'>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/student/*"
@@ -25,6 +26,7 @@ function App() {
           <Route path="/jobs/*" element={<JobsComponent/>}/>
         </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 

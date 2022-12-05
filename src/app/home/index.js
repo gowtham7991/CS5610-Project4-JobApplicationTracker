@@ -1,53 +1,42 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import "./index.css"
+import logo from "../../assets/logo.png"
+import jobsImage from "../../assets/jobs.png"
+
 const App = () => {
     return (
         <div >
-            <div className ="navbar big"  >
-                <div className="container navbar-container">
-                    <div >
-                        <Link to="/" style={{color: 'black', textDecoration: 'none'}}>logo image here</Link>
-                    </div>
-                    <div className = "big-nav-menu-wrapper" data-easing="ease" >
-                        <div className = "container navbar-container mobile ">
-                            <div className = "nav-cta-btn font-style">
-                                <Link to="/login" style={{ color: 'black', textDecoration: 'none' }}>Log In</Link>
-                            </div>
-                            <div className="nav-cta-btn " >
-                                <Link to="/student/register" style={{ color: 'black', textDecoration: 'none' }}>Sign up</Link>
-                            </div>
-                        </div>
-                    </div>
+            <div className="d-flex justify-content-between wd-main-navbar bg-light shadow p-4">
+                <div>
+                    <a class="navbar-brand" href="#">
+                        <img src={logo} alt="" width="200" height="50" class="d-inline-block align-text-top"/>
+                    </a>
+                </div>
+                <div className="d-flex">
+                    <button className="btn btn-outline-secondary rounded-pill mx-2">Find Job</button>
+                    <button className="btn btn-outline-secondary rounded-pill mx-2">Log in</button>
+                    <button className="btn btn-primary rounded-pill mx-2">Sign up</button>
                 </div>
             </div>
-            <div className = "main">
-                <div className = "candidate__hero wf-section">
-                    <div className = "container wide-container">
-                        <div className = "row">
-                            <div className="col col-6 col-m-12">
-                                <div className="candidate__hero-text-wrapper">
-                                    <h1 className="heading1">
-                                        Finding jobs has never been easier.
-                                    </h1>
-                                    <p className="para1">
-                                        APPNAME is a recruiting platform where candidates find jobs and get hired by the world's top tech companies.
-                                    </p>
-                                    <div className="w-layout-grid duo-btns">
-                                        <div className = "nav-cta-btn ">
-                                            <Link to="/login" style={{ color: 'black', textDecoration: 'none' }}>Browse Jobs</Link>
-                                        </div>
-                                        <div className="nav-cta-btn " >
-                                            <Link to="/student/register" style={{ color: 'black', textDecoration: 'none' }}>Hire Talent</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col col-6 col-m-12">
-                                Image here
-                                <img src=""></img>
+            <div className = "wd-main-content mt-5 mx-auto p-5 container">
+                <div className = "d-flex">
+                    <div className="">
+                        <div className="candidate__hero-text-wrapper">
+                            <h1 className="heading1">
+                                Finding jobs has never been easier.
+                            </h1>
+                            <p>
+                                JobFinder is a recruiting platform where candidates find jobs and get hired by the world's top tech companies.
+                            </p>
+                            <div className="d-flex">
+                                <button className="btn btn-primary rounded-pill">Browse Jobs</button>
+                                <button className="btn btn-outline-secondary rounded-pill border mx-3">Hire Talent</button>
                             </div>
                         </div>
+                    </div>
+                    <div className="col col-6 col-m-12">
+                        <img src={jobsImage}></img>
                     </div>
                 </div>
             </div>
@@ -56,3 +45,4 @@ const App = () => {
 }
 
 export default App
+
