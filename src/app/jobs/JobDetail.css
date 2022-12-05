@@ -1,0 +1,53 @@
+* {
+    text-align: left;
+}
+.wd-job-header { grid-area: header; }
+.wd-job-details { grid-area: details; }
+.wd-job-sidebar-content { grid-area: info; }
+
+.wd-jobdetail-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'details details details details details info';
+  gap: 20px;
+  padding: 10px;
+}
+
+.wd-jobdetail-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.wd-section-header {
+    text-align: left;
+}
+
+.wd-section-header h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.wd-section-header div {
+    font-size: 1rem;
+}
+
+.wd-sidebar-inner {
+    text-align: left;
+}
+
+.wd-sidebar-inner .wd-sidebar-inner-header p{
+    font-size: 1rem;
+}
+
+.wd-sidebar-inner a {
+    text-decoration: none;
+    color: gray;
+    font-size: 1rem;
+}
+
+.wd-apply-section button {
+    padding: 5px 30px
+}
