@@ -1,6 +1,12 @@
 .wd-profile-picture {
-    position: absolute;
-    top: 250px;
-    left: 16px;
+    position:absolute;
+    top: 130px;
+    left: 80px;
     font-size: 30px;
+}
+
+.wd-profile-basic {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 30px;
 }
