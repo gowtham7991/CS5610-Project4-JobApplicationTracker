@@ -10,12 +10,15 @@ const App = () => {
     return(
         <div>
             <NavBar/>
-            <Routes>
-                <Route path="student/*" element={<StudentComponent/>}/>
-                <Route path="admin/*" element={<AdminComponent/>}/>
-                <Route path="recruiter/*" element={<RecruiterComponent/>}/>
-                <Route path="jobs/*" element={<JobsComponent/>}/>
-            </Routes>
+            <div className="m-2">
+                <Routes>
+                    <Route path="student/*" element={<StudentComponent/>}/>
+                    <Route path="admin/*" element={<AdminComponent/>}/>
+                    <Route path="recruiter/*" element={<RecruiterComponent/>}/>
+                    <Route path="jobs/*" element={<JobsComponent/>}/>
+                </Routes>
+            </div>
+            
         </div>
     );
 }

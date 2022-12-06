@@ -18,7 +18,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Post a job</h5>
                             <p className="card-text text-muted">A new job for a new role can be created and students can apply</p>
-                            <Link to="/jobs/search">Create a job</Link>
+                            <Link to="job/create">Create a job</Link>
                         </div>
                     </div>
                     <div className="col card h-100 rounded border me-3">

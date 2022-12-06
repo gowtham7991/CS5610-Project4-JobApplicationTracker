@@ -8,7 +8,6 @@ const StudentApp = () => {
     return (
         <Routes>
             <Route path="" element={<Home/>}/>
-            <Route path="home" element={<Home/>}/>
             <Route path="profile" element={<ProfileComponent/>}/>
             <Route path="applications" element={<ApplicationsComponent/>}/>
         </Routes>
