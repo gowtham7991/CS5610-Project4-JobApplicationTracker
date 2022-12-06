@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import logo from "../assets/logo.png"
+import jobsImage from "../assets/jobs.png"
 import "./index.css"
-import logo from "../../assets/logo.png"
-import jobsImage from "../../assets/jobs.png"
 
 const App = () => {
     return (

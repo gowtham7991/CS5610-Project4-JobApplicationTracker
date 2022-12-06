@@ -1,15 +1,17 @@
 import React from "react";
-import JobSearch from "./JobSearch";
-import JobDetail from "./JobDetail"
-import "./index.css"
+import JobSearch from "./search";
+import JobDetail from "./detail/JobDetail"
 import { Route, Routes } from "react-router-dom";
+import ApplicantsComponent from "./applicants"
+import PostingForm from "./posting"
 
 const Jobs = () => {
-    const jobs = ['1','2','3','4','5','6']
     return(
         <Routes>
             <Route path="search" element={<JobSearch />}/>
             <Route path="detail/:jobId" element={<JobDetail />}/>
+            <Route path="create" element={<PostingForm />}/>
+            <Route path=":jobId/applicants" element={<ApplicantsComponent />}/>
         </Routes>
     );
 }

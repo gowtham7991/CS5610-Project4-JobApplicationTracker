@@ -1,0 +1,10 @@
+.wd-content #carousel {
+    height: 400px
+}
+
+.wd-icon-container {
+    background-color: #51ACC5;
+    width: 2rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}

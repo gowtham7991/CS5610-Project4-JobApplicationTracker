@@ -1,5 +1,5 @@
 import React from "react";
-import t from "../../assets/teslabot.jpg"
+import t from "../../../assets/teslabot.jpg"
 import "./JobSummaryCard.css"
 import { Link } from "react-router-dom";
 

@@ -1,37 +1,44 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
-import bgImage from "../../../assets/teslabot.jpg"
+import bgImage from "../assets/teslabot.jpg"
 import "./index.css"
-import logo from "../../../assets/logo.png"
+import logo from "../assets/logo.png"
 
-const StudentRegisterPage = () => {
+const RecuiterRegisterPage = () => {
     let [firstName, setFirstName] = useState('')
     let [lastName, setLastName] = useState('')
-    let [email, setEmail] = useState('')
+    let [linkedinURL, setLinkedinURL] = useState('')
+    let [personalEmail, setPersonalEmail] = useState('')
+    let [workEmail, setWorkEmail] = useState('')
     let [password, setPassword] = useState('');
-    let [university, setUniversity] = useState('');
+    let [company, setCompany] = useState('');
+    let [role, setRole] = useState('');
 
     const studentRegisterHandler = () => {
         const registrationDetails = {
             firstName,
             lastName,
-            email,
+            linkedinURL,
+            personalEmail,
+            workEmail,
             password,
-            university
+            company,
+            role
         }
         console.log(registrationDetails)
     }
     return (
         <div>
-            <div className="row m-0 wd-login-page">
+            <div className="row wd-login-page m-0">
                 <div className="col-7 wd-form-container p-0">
-                    <div className="wd-logo-container p-2">
+                <div className="wd-logo-container p-2">
                         <img src={logo}/>
                     </div>
                     <div className="wd-login-form">
                         <h1 style={{fontSize:"3rem"}}>Sign up</h1>
-                        <div className="mt-4 mb-4"><span style={{fontWeight:"400"}}>Not a student?</span> <Link to="/recruiter/register">Register as recruiter</Link></div>
+                        <div className="mt-4 mb-4"><span style={{fontWeight:"400"}}>Not a recruiter?</span> <Link to="/register/student">Register as student</Link></div>
+                        
                         <form>
                             <div className="row">
                                 <div class="col form-group mt-4">
@@ -46,9 +53,19 @@ const StudentRegisterPage = () => {
                                 </div>
                             </div>
                             <div class="form-group mt-4">
-                                <label for="exampleInputEmail1" className="form-label"><b>Email address</b></label>
-                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
-                                    placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                                <label for="linkedin-url" className="form-label"><b>Linkedin URL</b></label>
+                                <input type="text" className="form-control" id="linkedin-url" aria-describedby="emailHelp" 
+                                    placeholder="Enter your linkedin url" value={linkedinURL} onChange={(e) => setLinkedinURL(e.target.value)}/>
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="personal-email" className="form-label"><b>Personal Email</b></label>
+                                <input type="email" className="form-control" id="personal-email" aria-describedby="emailHelp" 
+                                    placeholder="Enter email" value={personalEmail} onChange={(e) => setPersonalEmail(e.target.value)}/>
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="work-email" className="form-label"><b>Work Email <small className="text-muted">(opt.)</small></b></label>
+                                <input type="email" className="form-control" id="work-email" aria-describedby="emailHelp" 
+                                    placeholder="Enter email" value={workEmail} onChange={(e) => setWorkEmail(e.target.value)}/>
                             </div>
                             <div class="form-group mt-4">
                                 <label for="exampleInputPassword1" className="form-label"><b>Password</b></label>
@@ -56,14 +73,25 @@ const StudentRegisterPage = () => {
                                     placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                             </div>
                             <div class="form-group mt-4">
-                                <label for="university" className="form-label"><b>University</b></label>
-                                <select class="form-control" id="university" value={university} onChange={(e) => setUniversity(e.target.value)}>
+                                <label for="company" className="form-label"><b>Company</b></label>
+                                <select class="form-control" id="company" value={company} onChange={(e) => setCompany(e.target.value)}>
                                     <option selected>select</option>
-                                    <option>Northeastern university</option>
-                                    <option>Massachussets Institute of Technology</option>
-                                    <option>Boston university</option>
-                                    <option>Harvard university</option>
-                                    <option>Wentworth Institute of Technology</option>
+                                    <option>Google</option>
+                                    <option>Amazon</option>
+                                    <option>Meta</option>
+                                    <option>Apple</option>
+                                    <option>Netflix</option>
+                                    <option>Tesla</option>
+                                </select>
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="role" className="form-label"><b>Role</b></label>
+                                <select class="form-control" id="role" value={role} onChange={(e) => setRole(e.target.value)}>
+                                    <option selected>select</option>
+                                    <option>University Recruiter</option>
+                                    <option>Recruiter</option>
+                                    <option>Hiring Manager</option>
+                                    <option>Talent Lead</option>
                                 </select>
                             </div>
                             <div className="form-submit">
@@ -73,6 +101,7 @@ const StudentRegisterPage = () => {
                                 
                             </div>
                         </form>
+
                         <span className="d-flex justify-content-between my-4">
                             <hr className="w-46 d-inline-block"/> or <hr className="d-inline-block"/>
                         </span>
@@ -88,4 +117,4 @@ const StudentRegisterPage = () => {
     );
 }
 
-export default StudentRegisterPage
+export default RecuiterRegisterPage

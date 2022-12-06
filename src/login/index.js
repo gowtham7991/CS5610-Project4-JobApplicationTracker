@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, useNavigate } from "react-router-dom";
-import bgImage from "../../assets/teslabot.jpg"
+import bgImage from "../assets/teslabot.jpg"
 import "./index.css"
-import logo from "../../assets/logo.png"
+import logo from "../assets/logo.png"
 
 const LoginPage = () => {
     let [email, setEmail] = useState('');
@@ -29,7 +29,7 @@ const LoginPage = () => {
                     </div>
                     <div className="wd-login-form p-5">
                         <h1 style={{fontSize:"3rem"}}>Log in</h1>
-                        <div className="mt-4 mb-4"><span style={{fontWeight:"400"}}>Need a JobFinder account?</span> <Link to="/student/register">Sign up</Link></div>
+                        <div className="mt-4 mb-4"><span style={{fontWeight:"400"}}>Need a JobFinder account?</span> <Link to="/register/student">Sign up</Link></div>
                         <span className="d-flex justify-content-between">
                             <hr className="w-46 d-inline-block"/> or <hr className="d-inline-block"/>
                         </span>

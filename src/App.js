@@ -4,12 +4,12 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import 'font-awesome/css/font-awesome.min.css';
 import {BrowserRouter} from "react-router-dom";
 import {Routes, Route} from "react-router";
-import StudentComponent from "./app/student"
-import RecruiterComponent from "./app/recruiter"
-import AdminComponent from "./app/admin"
-import Home from "./app/home/index"
-import LoginComponent from "./app/login"
+import Home from "./home"
+import LoginComponent from "./login"
 import JobsComponent from "./app/jobs"
+import StudentRegistration from "./studentRegistration"
+import RecruiterRegistration from "./recruiterRegistration"
+import JobApp from "./app/index"
 
 function App() {
   return (
@@ -17,13 +17,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/student/*"
-                element={<StudentComponent/>}/>
-          <Route path="/recruiter/*"
-                element={<RecruiterComponent/>}/>
-          <Route path="/admin/*" element={<AdminComponent/>}/>
           <Route path="/login" element={<LoginComponent/>}/>
+          <Route path="/register/student" element={<StudentRegistration/>}/>
+          <Route path="/register/recruiter" element={<RecruiterRegistration/>}/>
           <Route path="/jobs/*" element={<JobsComponent/>}/>
+          <Route path="/app/*" element={<JobApp />} />
         </Routes>
     </BrowserRouter>
     </div>

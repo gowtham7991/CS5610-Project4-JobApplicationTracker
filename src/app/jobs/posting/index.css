@@ -1,0 +1,30 @@
+.wd-job-posting {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.wd-logo-container > img {
+    width: 10rem;
+    height: 3rem;
+}
+
+.form-group .form-label {
+    font-size: 20px;
+}
+
+.form-group .form-control {
+    height: 3rem;
+}
+
+span > hr {
+    width: 46%;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+button {
+    height: 3rem;
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./JobDetail.css"
-import logo from "../../assets/logo.png"
+import logo from "../../../assets/logo.png"
 
 const JobDetail = () => {
     const urlParams = useParams();
     const jobId = urlParams.jobId;
 
     return(
-        <div className="wd-jobdetail-container container">
+        <div className="wd-jobdetail-container">
             <div className="d-flex wd-job-header border p-3">
                 <div className="col-1 wd-company-logo">
                     <img src={logo}/>

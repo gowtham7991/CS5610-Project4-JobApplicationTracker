@@ -2,65 +2,44 @@ import React from "react";
 import "./index.css"
 import { Link } from "react-router-dom";
 import NavBar from "../../navbar"
-
+import carousel from "../../../assets/grads.jpg"
 
 const Home = () => {
     return (
         <div>
-            <div>
-                <NavBar/>
-            </div>
-            <div className = "main-body container">
-                <div className="row">
-                    <div className="main-body-text-wrapper">
-                        <h1 className="heading1 row">
-                            Welcome
-                        </h1>
-                    </div>
+            <div className="wd-content container">
+                <div className="py-4">
+                    <img src={carousel} className="w-100" id="carousel"/>
                 </div>
-                <div className = "row">
-                    <div>
-                        <div className="row">
-                            <div className="col-md-4">
-                                <div className="card h-100">
-                                    <Link to="/applications" style={{color:"black", textDecoration: 'none' }}>
-                                        <div className="card-body">
-                                            <div>
-                                                <i className="fa-solid fa-list-check"></i>
-                                            </div>
-                                            <h5 className="card-title">Applications</h5>
-                                            <p className="card-text" style={{color: "darkgray"}}>Look at the list of all jobs you have applied to so far.</p>
-                                            {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
-                                        </div>
-                                    </Link>
-                                </div>
+                <div className="wd-cards-section row m-0">
+                    <div className="col card h-100 rounded border me-3">
+                        <div className="card-body">
+                            <div className="wd-icon-container d-flex justify-content-center p-2 rounded-pill">
+                                <i class="fa fa-search" aria-hidden="true"></i>
                             </div>
-                            <div className="col-md-4">
-                                <div className="card h-100">
-                                    <Link to="/profile" style={{color:"black", textDecoration: 'none' }}>
-                                        <div className="card-body">
-                                            <div>
-                                                <i className="fa-solid fa-user"></i>
-                                            </div>
-                                            <h5 className="card-title">Profile</h5>
-                                            <p className="card-text" style={{color: "darkgray"}}>Showcase your academic and professional achievements.</p>
-                                        </div>
-                                    </Link>
-                                </div>
+                            <h5 className="card-title">Job Search</h5>
+                            <p className="card-text text-muted">Search for jobs and get personalized recommendations</p>
+                            <Link to="/jobs/search">view jobs</Link>
+                        </div>
+                    </div>
+                    <div className="col card h-100 rounded border me-3">
+                        <div className="card-body">
+                            <div className="wd-icon-container d-flex justify-content-center p-2 rounded-pill">
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                             </div>
-                            <div className="col-md-4">
-                                <div className="card h-100">
-                                    <Link to="/" style={{color:"black", textDecoration: 'none' }}>
-                                        <div className="card-body">
-                                            <div>
-                                                <i className="fa-solid fa-laptop"></i>
-                                            </div>
-                                            <h5 className="card-title">Search jobs</h5>
-                                            <p className="card-text" style={{color: "darkgray"}}>Search for jobs and get personalized recommendations.</p>
-                                        </div>
-                                    </Link>
-                                </div>
+                            <h5 className="card-title">Applications</h5>
+                            <p className="card-text text-muted">Look at the list of all jobs you have applied to so far</p>
+                            <Link to="/students/applications">view applications</Link>
+                        </div>
+                    </div>
+                    <div className="col card h-100 rounded border">
+                        <div className="card-body">
+                            <div className="wd-icon-container d-flex justify-content-center p-2 rounded-pill">
+                                <i class="fa fa-user" aria-hidden="true"></i>
                             </div>
+                            <h5 className="card-title">Public Profile</h5>
+                            <p className="card-text text-muted">View for profile to add personal details to improve your chance of getting a job</p>
+                            <Link to="/students/profile">view profile</Link>
                         </div>
                     </div>
                 </div>
