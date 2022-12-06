@@ -1,10 +1,12 @@
 [{
-  "firstName": "Jose",
-  "lastName": "Annunziato",
-  "handle": "@jannunzi",
-  "profilePicture": "nodejs.png",
-  "bannerPicture": "js.png",
-  "bio": "Faculty, Software Engineer, AI, Space, and renewable enthusiast. Retuits and likes are not endorsements.",
-  "website": "surghkrhvjkdss.com",
-  "location": "Boston, MA"
+  "firstName": "Renuka",
+  "lastName": "Ganesh",
+  "handle": "@renukaganesh",
+  "profilePicture": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+  "bannerPicture": "https://miro.medium.com/max/800/1*bc9pmTiyKR0WNPka2w3e0Q.png",
+  "about": "Some text here that describes me. I love dogs. I'd like to get a Samoyed one day and name him Riceball.",
+  "headline": "SDE Intern @Amazon",
+  "website": "https://www.google.com/",
+  "location": "Boston, MA",
+  "email": "ganesh.re@northeastern.edu"
 }]
