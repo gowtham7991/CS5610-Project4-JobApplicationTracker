@@ -22,7 +22,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Job Search</h5>
                             <p className="card-text text-muted">Search for jobs and get personalized recommendations</p>
-                            <Link to="/app/jobs/search">view jobs</Link>
+                            <Link to="/app/jobs/">view jobs</Link>
                         </div>
                     </div>
                     <div className="col card h-100 rounded border me-3">

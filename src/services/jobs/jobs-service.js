@@ -2,7 +2,7 @@ import axios from 'axios'
 const API_BASE = process.env.JOB_APP_API_BASE;
 const JOBS_API = `${API_BASE}/jobs`;
 
-export const findAllJobs = async () => {
+export const findInternalJobs = async () => {
     const response = await axios.get(JOBS_API);
     return response.data;
 }
@@ -12,12 +12,17 @@ export const findExternalJobs = async () => {
     return response.data;
 }
 
-export const findJobById = async (id) => {
-    const response = await axios.get(`${JOBS_API}/${id}`)
+export const findJobById = async (jobId) => {
+    const response = await axios.get(`${JOBS_API}/${jobId}`)
     return response.data
 }
 
 export const createJob = async (jobDetails) => {
     const response = await axios.post(`${JOBS_API}/create`, jobDetails);
+    return response.data
+}
+
+export const deleteJob = async (jobId) => {
+    const response = await axios.delete(`${JOBS_API}/${jobId}`);
     return response.data
 }

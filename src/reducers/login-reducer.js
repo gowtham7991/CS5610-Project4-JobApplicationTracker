@@ -4,7 +4,9 @@ import { loginThunk } from "../services/login/login-thunks";
 const initialState = {
     userDetails: {
         name: "",
-        role: ""
+        role: "",
+        uid: 0,
+        email: ""
     },
     isLoggedIn: false
 }
@@ -18,7 +20,9 @@ const loginSlice = createSlice({
             state.isLoggedIn = false
             state.userDetails = {
                 name: "",
-                role: ""
+                role: "",
+                uid: 0,
+                email: ""
             }
         },
         [loginThunk.fulfilled] : 
@@ -26,7 +30,9 @@ const loginSlice = createSlice({
             state.isLoggedIn = true
             state.userDetails = {
                 name: payload.name,
-                role: payload.role
+                role: payload.role,
+                uid: payload.uid,
+                email: payload.email
             }
         },
         [loginThunk.failed] : 

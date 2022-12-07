@@ -7,7 +7,7 @@ import "./index.css"
 const App = () => {
     let navigate = useNavigate();
     const browseJobsHandler = () => {
-        navigate('/jobs/search')
+        navigate('/jobs/')
     }
 
     const hireTalentHandler = () => {

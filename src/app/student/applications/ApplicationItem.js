@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../assets/logo.png"
+import Google from "../../../assets/google.jpg"
 import "./ApplicationItem.css"
 import { Link } from "react-router-dom";
 
@@ -7,8 +7,8 @@ const ApplicationItem = ({data}) => {
     return(
         <li className="wd-application-item list-group-item border">
             <div className="row">
-                <div className="col-1 p-3">
-                    <img src={logo} className="wd-company-logo rounded" />
+                <div className="col-1 p-3 d-flex justify-content-center align-items-center">
+                    <img src={Google} className="wd-company-logo rounded" />
                 </div>
                 <div className="col">
                     <p className="h6">Job position - title</p>
@@ -17,6 +17,9 @@ const ApplicationItem = ({data}) => {
                     <div>
                         <Link to="/jobs/1111">View job</Link>
                     </div>
+                </div>
+                <div className="col-2 d-flex justify-content-center align-items-center">
+                    <button className="btn btn-danger rounded-pill">withdraw</button>
                 </div>
             </div>
         </li>

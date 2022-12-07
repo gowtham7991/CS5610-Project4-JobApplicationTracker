@@ -2,13 +2,22 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./JobDetail.css"
 import logo from "../../../assets/logo.png"
+import { Link } from "react-router-dom";
 
 const JobDetail = () => {
     const urlParams = useParams();
     const jobId = urlParams.jobId;
 
     return(
-        <div className="wd-jobdetail-container">
+        <div className="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><Link to="/app/recruiter">Home</Link></li>
+                    <li class="breadcrumb-item"><Link to="/app/jobs/search">Postings</Link></li>
+                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                </ol>
+            </nav>
+            <div className="wd-jobdetail-container">
             <div className="d-flex wd-job-header border p-3">
                 <div className="col-1 wd-company-logo">
                     <img src={logo}/>
@@ -45,11 +54,11 @@ const JobDetail = () => {
                         </p>
                     </div>
                     <div className="wd-job-desired-skill">
-                        <p className="h6">Desired SKills</p>
+                        <p className="h6">Desired Skills</p>
                         <div className="row my-2">
-                            <span class="col-2 badge rounded-pill bg-light text-dark border border-success mx-2">Python</span>
-                            <span class="col-2 badge rounded-pill bg-light text-dark border border-success mx-2">Java</span>
-                            <span class="col-2 badge rounded-pill bg-light text-dark border border-success mx-2">C++</span>
+                            <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">Python</span>
+                            <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">Java</span>
+                            <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">C++</span>
                             <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">AWS</span>
                             <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">Linux</span>
                         </div>
@@ -131,6 +140,8 @@ const JobDetail = () => {
                     </div>
                 </div>
             </div>
+            </div>
+           
         </div>
     );
 }
