@@ -7,7 +7,7 @@ import ApplicantsComponent from "./applicants"
 const Jobs = () => {
     return(
         <Routes>
-            <Route path="" element={<JobSearch />}/>
+            <Route path="search/*" element={<JobSearch />}/>
             <Route path="detail/:jobId" element={<JobDetail />}/>
             <Route path=":jobId/applicants" element={<ApplicantsComponent />}/>
         </Routes>

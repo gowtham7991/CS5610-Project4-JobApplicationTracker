@@ -1,14 +1,19 @@
 import React from "react";
 import "./index.css"
 import { Link } from "react-router-dom";
-import tesla from "../../../assets/teslabot.jpg"
+import bannerImg from "../../../assets/recruiterHome.jpg"
+import { useSelector } from "react-redux";
 
 const Home = () => {
+    const userDetails = useSelector(state => state.loginData).userDetails
+
     return (
         <div>
             <div className="wd-content container">
+                <h3>{`Welcome, ${userDetails.name}!`}</h3>
+
                 <div className="py-4">
-                    <img src={tesla} className="w-100" id="carousel"/>
+                    <img src={bannerImg} className="w-100" id="carousel"/>
                 </div>
                 <div className="wd-cards-section row m-0">
                     <div className="col card h-100 rounded border me-3">

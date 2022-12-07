@@ -2,15 +2,16 @@ import React from "react";
 import "./index.css"
 import { Link } from "react-router-dom";
 import NavBar from "../../navbar"
-import carousel from "../../../assets/grads.jpg"
+import carousel from "../../../assets/studentHome.jpg"
+import { useSelector } from "react-redux";
 
 const Home = () => {
-    const uid = 1111;
+    const userDetails = useSelector(state => state.loginData).userDetails
 
     return (
         <div>
             <div className="wd-content container">
-
+                <h3>{`Welcome, ${userDetails.name}`}</h3>
                 <div className="py-4">
                     <img src={carousel} className="w-100" id="carousel"/>
                 </div>
@@ -42,7 +43,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Public Profile</h5>
                             <p className="card-text text-muted">View for profile to add personal details to improve your chance of getting a job</p>
-                            <Link to={`profile/${uid}`}>view profile</Link>
+                            <Link to={`profile/${userDetails.uid}`}>view profile</Link>
                         </div>
                     </div>
                 </div>

@@ -3,10 +3,10 @@ import { loginThunk } from "../services/login/login-thunks";
 
 const initialState = {
     userDetails: {
-        name: "",
-        role: "",
+        name: "Gowtham Potnuru",
+        role: "student",
         uid: 0,
-        email: ""
+        email: "jjj@gmail.com"
     },
     isLoggedIn: false
 }
