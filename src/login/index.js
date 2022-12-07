@@ -4,19 +4,22 @@ import { Link, useNavigate } from "react-router-dom";
 import bgImage from "../assets/teslabot.jpg"
 import "./index.css"
 import logo from "../assets/logo.png"
+import { loginThunk } from "../services/login/login-thunks";
+import { useDispatch } from "react-redux";
 
 const LoginPage = () => {
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
     let navigate = useNavigate();
+    let dispatch = useDispatch();
 
     const loginHandler = () => {
         const loginDetails = {
             email : email,
             password  :password
         }
-        console.log(loginDetails)
-        let newPath = '/student/home'
+        dispatch(loginThunk(loginDetails))
+        let newPath = '/app/student/'
         navigate(newPath)
     }
 

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import bgImage from "../assets/teslabot.jpg"
 import logo from "../assets/logo.png"
+import { studentRegistrationThunk } from "../services/registration/registration-thunks";
+import { useDispatch } from "react-redux";
 
 const StudentRegisterPage = () => {
     let [firstName, setFirstName] = useState('')
@@ -10,6 +12,9 @@ const StudentRegisterPage = () => {
     let [email, setEmail] = useState('')
     let [password, setPassword] = useState('');
     let [university, setUniversity] = useState('');
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const studentRegisterHandler = () => {
         const registrationDetails = {
@@ -19,7 +24,8 @@ const StudentRegisterPage = () => {
             password,
             university
         }
-        console.log(registrationDetails)
+        dispatch(studentRegistrationThunk(registrationDetails));
+        navigate('/login')
     }
     return (
         <div>

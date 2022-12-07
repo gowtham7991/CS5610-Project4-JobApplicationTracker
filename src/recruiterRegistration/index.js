@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import bgImage from "../assets/teslabot.jpg"
 import "./index.css"
 import logo from "../assets/logo.png"
+import { recruiterRegistrationThunk } from "../services/registration/registration-thunks";
+import { useDispatch } from "react-redux";
 
 const RecuiterRegisterPage = () => {
     let [firstName, setFirstName] = useState('')
@@ -15,7 +17,10 @@ const RecuiterRegisterPage = () => {
     let [company, setCompany] = useState('');
     let [role, setRole] = useState('');
 
-    const studentRegisterHandler = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const recruiterRegisterHandler = () => {
         const registrationDetails = {
             firstName,
             lastName,
@@ -26,7 +31,8 @@ const RecuiterRegisterPage = () => {
             company,
             role
         }
-        console.log(registrationDetails)
+        dispatch(recruiterRegistrationThunk(registrationDetails));
+        navigate('/login');
     }
     return (
         <div>
@@ -98,7 +104,7 @@ const RecuiterRegisterPage = () => {
                             </div>
                             <div className="form-submit">
                                 <div className="mt-4 ml-2 mr-2">
-                                    <button type="submit" className ="btn btn-primary w-100" onClick={studentRegisterHandler}>Sign up</button>
+                                    <button type="submit" className ="btn btn-primary w-100" onClick={recruiterRegisterHandler}>Sign up</button>
                                 </div>
                                 
                             </div>

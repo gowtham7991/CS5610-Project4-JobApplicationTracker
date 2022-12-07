@@ -12,10 +12,10 @@ import RecruiterRegistration from "./recruiterRegistration"
 import JobApp from "./app/index"
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-
+import loginReducer from './reducers/login-reducer';
 const store = configureStore(
   {
-    reducer : {userDetails: login}
+    reducer : {userDetails: loginReducer}
   }
 )
 function App() {
