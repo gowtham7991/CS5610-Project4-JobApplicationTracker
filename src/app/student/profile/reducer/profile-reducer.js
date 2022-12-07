@@ -1,9 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 import profile from "../data/profile.json";
+import { findProfileThunk } from "../../../../services/profile/profile-thunks"
+
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+const initialState = {
+    profile: profile,
+    loading: false
+}
 const profileSlice = createSlice({
     name: "profile",
-    initialState: profile,
+    initialState,
+    extraReducers: {
+        [findProfileThunk.pending]:
+            (state) => {
+                state.loading = true
+                state.profile = []
+            },
+        [findProfileThunk.fulfilled]:
+            (state, {payload}) => {
+                state.loading = false
+                state.profile = payload
+            },
+        [findProfileThunk.rejected]:
+            (state) => {
+                state.loading = false
+            }
+    },
     reducers: {
         editProfile(state, action) {
             state[0].firstName = action.payload.profile["name"].split(" ")[0]
@@ -14,11 +37,11 @@ const profileSlice = createSlice({
             let dateOfBirthFormat;
             dateOfBirthFormat = action.payload.profile["birthdate"].split("-");
             let newDOB;
-            newDOB = dateOfBirthFormat[2] + " " + monthNames[dateOfBirthFormat[1]-1] + " " + dateOfBirthFormat[0];
+            newDOB = dateOfBirthFormat[2] + " " + monthNames[dateOfBirthFormat[1] - 1] + " " + dateOfBirthFormat[0];
             state[0].dateOfBirth = newDOB
         }
     }
 });
 
-export const { editProfile } = profileSlice.actions
+export const {editProfile} = profileSlice.actions
 export default profileSlice.reducer;
