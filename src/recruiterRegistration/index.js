@@ -33,7 +33,9 @@ const RecuiterRegisterPage = () => {
             <div className="row wd-login-page m-0">
                 <div className="col-7 wd-form-container p-0">
                 <div className="wd-logo-container p-2">
-                        <img src={logo}/>
+                    <Link to="/">
+                            <img src={logo} style={{width:"10rem", height:"3rem"}}/>
+                        </Link>
                     </div>
                     <div className="wd-login-form">
                         <h1 style={{fontSize:"3rem"}}>Sign up</h1>

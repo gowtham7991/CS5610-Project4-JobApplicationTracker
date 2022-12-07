@@ -25,7 +25,9 @@ const LoginPage = () => {
             <div className="row m-0 wd-login-page">
                 <div className="col-4 wd-form-container p-0">
                     <div className="wd-logo-container p-2">
-                        <img src={logo}/>
+                        <Link to="/">
+                            <img src={logo} style={{width:"10rem", height:"3rem"}}/>
+                        </Link>
                     </div>
                     <div className="wd-login-form p-5">
                         <h1 style={{fontSize:"3rem"}}>Log in</h1>

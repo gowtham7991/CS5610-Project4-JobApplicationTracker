@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css"
 import { MultiSelect } from "react-multi-select-component";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PostingForm = () => {
     const options = [
@@ -14,8 +15,15 @@ const PostingForm = () => {
     const [selected, setSelected] = useState([]);
 
     return(
-        <div className="wd-job-posting container">
-            <p className="h4 mb-5">Create a new job</p>
+        <div className="wd-job-posting container rounded bg-white mt-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><Link to="/app/recruiter">Home</Link></li>
+                    <li class="breadcrumb-item"><Link to="/app/jobs/search">Postings</Link></li>
+                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                </ol>
+            </nav>
+            <p className="h4 mb-5 text-center">Create a new job</p>
             <form>
                 <div className="form-group mb-4">
                     <label for="jobtitle" className="form-label"><b>Job Title</b></label>

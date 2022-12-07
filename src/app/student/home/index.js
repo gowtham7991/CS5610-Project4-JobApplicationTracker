@@ -5,9 +5,12 @@ import NavBar from "../../navbar"
 import carousel from "../../../assets/grads.jpg"
 
 const Home = () => {
+    const uid = 1111;
+
     return (
         <div>
             <div className="wd-content container">
+
                 <div className="py-4">
                     <img src={carousel} className="w-100" id="carousel"/>
                 </div>
@@ -19,7 +22,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Job Search</h5>
                             <p className="card-text text-muted">Search for jobs and get personalized recommendations</p>
-                            <Link to="/jobs/search">view jobs</Link>
+                            <Link to="/app/jobs/search">view jobs</Link>
                         </div>
                     </div>
                     <div className="col card h-100 rounded border me-3">
@@ -29,7 +32,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Applications</h5>
                             <p className="card-text text-muted">Look at the list of all jobs you have applied to so far</p>
-                            <Link to="/students/applications">view applications</Link>
+                            <Link to="applications">view applications</Link>
                         </div>
                     </div>
                     <div className="col card h-100 rounded border">
@@ -39,7 +42,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Public Profile</h5>
                             <p className="card-text text-muted">View for profile to add personal details to improve your chance of getting a job</p>
-                            <Link to="/students/profile">view profile</Link>
+                            <Link to={`profile/${uid}`}>view profile</Link>
                         </div>
                     </div>
                 </div>
