@@ -31,26 +31,32 @@ const ProfileComponent = ({email}) => {
                             </button>
                         </Link></span>
                         <div className="mb-3">{profile.headline}</div>
-                        <div className="mb-3"><b>Website:</b> <a href={profile.linkedInURL}>{profile.linkedInURL}</a>
+                        <div className="mb-3"><b>LinkedIn:</b> <a href={profile.linkedInURL}>{profile.linkedInURL}</a>
+                        <div className="mb-3"><b>GitHub:</b> <a href={profile.githubURL}>{profile.githubURL}</a>
+                        <div className="mb-3"><b>Website:</b> <a href={profile.website}>{profile.website}</a>
                         </div>
                         <div className="mb-3"><b>Location:</b> {profile.location}</div>
                         <div className="mb-3"><b>Contact info:</b>
                             <a href={profile.email}> {profile.email}</a>
-                            <a href={profile.contactPhone}> {profile.contactPhone}</a>
+                            <a href={profile.mobileNumber}> {profile.mobileNumber}</a>
+                            {profile.address}
                         </div>
                         <div className="mb-3">{profile.summary}</div>
                     </div>
                 </div>
                 <div className="container bg-white border rounded-2 mt-4">
                     <div className="mb-2 mt-2"><h4>About</h4></div>
-                    {profile.about}
+                    {profile.aboutMe}
                 </div>
 
                 <div className="container bg-white border rounded-2 mt-4">
                     <div className="mb-2 mt-2"><h4>Education</h4></div>
                     <h5>{profile.university}</h5><br/>
+                    {profile.educationLevel}<br/>
+                    {profile.major}<br/>
                     {profile.department}<br/>
-                    {profile.graduationDate}
+                    {profile.graduationDate}<br/>
+                    {profile.GPA}
                 </div>
 
                 <div className="container bg-white border rounded-2 mt-4">
@@ -69,6 +75,8 @@ const ProfileComponent = ({email}) => {
                         })}
                     </ul>
                 </div>
+            </div>
+            </div>
             </div>
         )
     )

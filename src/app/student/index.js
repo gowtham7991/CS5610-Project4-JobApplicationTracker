@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./home"
 import RegisterComponent from "./register"
-import ProfileComponent from "./profile/view_mode/profile_basic"
+import ProfileComponent from "./profile/view_mode"
 import { Provider } from "react-redux";
 import { configureStore } from '@reduxjs/toolkit';
 import profileReducer from "./profile/reducer/profile-reducer";
