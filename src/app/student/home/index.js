@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css"
 import { Link } from "react-router-dom";
 import NavBar from "../../navbar"
-import carousel from "../../../assets/studentHome.jpg"
+import carousel from "../../../assets/studentHome.png"
 import { useSelector } from "react-redux";
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div>
             <div className="wd-content container">
-                <h3>{`Welcome, ${userDetails.name}`}</h3>
+                <h3>{`Welcome, ${userDetails.name}!`}</h3>
                 <div className="py-4">
                     <img src={carousel} className="w-100" id="carousel"/>
                 </div>

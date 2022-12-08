@@ -7,6 +7,11 @@ export const findApplications = async (uid) => {
     return response.data
 }
 
+export const createApplication = async (applictionDetails) => {
+    const response = await axios.post(APPLICATIONS_API, applictionDetails)
+    return response.data
+}
+
 export const withdrawApplication = async (applicationId) => {
     const response = await axios.delete(`${APPLICATIONS_API}/${applicationId}`)
     return response.data

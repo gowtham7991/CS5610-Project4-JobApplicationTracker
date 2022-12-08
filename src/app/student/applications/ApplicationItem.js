@@ -15,7 +15,7 @@ const ApplicationItem = ({data}) => {
                     <p>Company Name</p>
                     <small className="text-muted">{`Application submitted ${'Oct 14, 2022'}, ${'9:35'}`}</small>
                     <div>
-                        <Link to="/jobs/1111">View job</Link>
+                        <Link to="/app/jobs/detail/1111">View job</Link>
                     </div>
                 </div>
                 <div className="col-2 d-flex justify-content-center align-items-center">

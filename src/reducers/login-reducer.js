@@ -5,7 +5,7 @@ const initialState = {
     userDetails: {
         name: "Gowtham Potnuru",
         role: "student",
-        uid: 0,
+        uid: 222222,
         email: "jjj@gmail.com"
     },
     isLoggedIn: false

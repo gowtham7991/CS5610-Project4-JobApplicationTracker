@@ -10,6 +10,7 @@ const StudentApp = () => {
         <Routes>
             <Route path="" element={<Home/>}/>
             <Route path="profile/:uid" element={<ProfileComponent/>}/>
+            <Route path="profile" element={<ProfileComponent/>}/>
             <Route path="edit-profile" element={<EditProfileComponent/>}/>
             <Route path="applications" element={<ApplicationsComponent/>}/>
         </Routes>

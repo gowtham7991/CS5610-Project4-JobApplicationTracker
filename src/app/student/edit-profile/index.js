@@ -13,8 +13,8 @@ const EditProfile = () => {
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><Link to="/app/student">Home</Link></li>
-                    <li class="breadcrumb-item"><Link to="/app/jobs/search">Jobs</Link></li>
-                    <li class="breadcrumb-item"><Link to="/app/student/applications">Applications</Link></li>
+                    <li class="breadcrumb-item"><Link to="/app/jobs/">Jobs</Link></li>
+                    <li class="breadcrumb-item"><Link to="../profile">Profile</Link></li>
                     <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
                 </ol>
             </nav>

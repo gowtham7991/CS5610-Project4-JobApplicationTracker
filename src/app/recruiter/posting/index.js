@@ -3,17 +3,50 @@ import "./index.css"
 import { MultiSelect } from "react-multi-select-component";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { createJobThunk } from "../../../services/jobs/jobs-thunks";
 
 const PostingForm = () => {
-    const options = [
+    const skillsList = [
         { label: "Grapes 🍇", value: "grapes" },
         { label: "Mango 🥭", value: "mango" },
         { label: "Strawberry 🍓", value: "strawberry", disabled: true },
       ];
       
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [term, setTerm] = useState("");
+    const [positionType, setPositionType] = useState("");
+    const [duration, setDuration] = useState("");
+    const [location, setLocation] = useState("");
+    const [paymentType, setPaymentType] = useState("");
+    const [pay, setPay] = useState("");
+    const [deadlineDate, setDeadlineDate] = useState("");
+    const [startDate, setStartDate] = useState("");
+    const [openings, setOpenings] = useState("");
+    const [skills, setSkills] = useState([]);
     
-    const [selected, setSelected] = useState([]);
-
+    const dispatch = useDispatch();
+    const createJobHandler = (e) => {
+        e.preventDefault();
+        const skillsSelected = skills.map(s => s.value)
+        const jobDetails = {
+            title,
+            description,
+            term,
+            positionType,
+            duration,
+            location,
+            paymentType,
+            pay,
+            deadlineDate,
+            startDate,
+            openings,
+            skills: skillsSelected
+        }
+        console.log(jobDetails)
+        dispatch(createJobThunk(jobDetails))
+    }
     return(
         <div className="wd-job-posting container rounded bg-white mt-5">
             <nav aria-label="breadcrumb">
@@ -28,17 +61,18 @@ const PostingForm = () => {
                 <div className="form-group mb-4">
                     <label for="jobtitle" className="form-label"><b>Job Title</b></label>
                     <input type="text" className="form-control" id="jobtitle" 
-                        placeholder="Enter job title" />
+                        placeholder="Enter job title" value={title} onChange={(e) => setTitle(e.target.value)}/>
                 </div>
 
                 <div className="form-group mb-4">
                     <label for="amount" className="form-label"><b>Description</b></label>
-                    <textarea className="form-control" id="description" rows="10" style={{height:"6rem"}}></textarea>
+                    <textarea className="form-control" id="description" 
+                    rows="10" style={{height:"6rem"}}  value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                 </div>
 
                 <div className="form-group mb-4">
                     <label for="term" className="form-label"><b>Term</b></label>
-                    <select className="form-control" id="term" >
+                    <select className="form-control" id="term"  value={term} onChange={(e) => setTerm(e.target.value)}>
                         <option selected>select</option>
                         <option>Spring 23</option>
                         <option>Summer 23</option>
@@ -48,7 +82,7 @@ const PostingForm = () => {
 
                 <div className="form-group mb-4">
                     <label for="position-type" className="form-label"><b>Position Type</b></label>
-                    <select className="form-control" id="position-type" >
+                    <select className="form-control" id="position-type"  value={positionType} onChange={(e) => setPositionType(e.target.value)}>
                         <option selected>select</option>
                         <option>Co-op</option>
                         <option>Internship</option>
@@ -59,18 +93,19 @@ const PostingForm = () => {
                 <div className="form-group mb-4">
                     <label for="duration" className="form-label"><b>Duration</b></label>
                     <input type="text" className="form-control" id="duration" 
-                        placeholder="Enter job title" />
+                        placeholder="Enter job title"  value={duration} onChange={(e) => setDuration(e.target.value)}/>
                 </div>
 
                 <div className="form-group mb-4">
                     <label for="location" className="form-label"><b>Location</b></label>
                     <input type="text" className="form-control" id="location" 
-                        placeholder="Enter job location" />
+                        placeholder="Enter job location"  value={location} onChange={(e) => setLocation(e.target.value)}/>
                 </div>
 
                 <div className="form-group mb-4">
                     <label for="payment-type" className="form-label"><b>Payment Type</b></label>
-                    <select className="form-control" id="payment-type" >
+                    <select className="form-control" id="payment-type"  
+                        value={paymentType} onChange={(e) => setPaymentType(e.target.value)}>
                         <option selected>select</option>
                         <option>Hourly</option>
                         <option>Weekly</option>
@@ -83,7 +118,8 @@ const PostingForm = () => {
                     <label for="amount" className="form-label"><b>Pay</b></label>
                     <div className="d-flex">
                         <span className="input-group-text">$</span>
-                        <input type="text" className="form-control" id="amount" aria-label="Amount (to the nearest dollar)"/>
+                        <input type="text" className="form-control" id="amount" 
+                        aria-label="Amount (to the nearest dollar)"  value={pay} onChange={(e) => setPay(e.target.value)}/>
                         <span className="input-group-text">.00</span>
                     </div>
                 </div>
@@ -91,12 +127,13 @@ const PostingForm = () => {
                 <div className="form-group mb-4">
                     <label for="application-deadline" className="form-label"><b>Application Deadline</b></label>
                     <input type="date" className="form-control" id="application-deadline" 
-                        placeholder="Enter job title" />
+                         value={deadlineDate} onChange={(e) => setDeadlineDate(e.target.value)}/>
                 </div>
 
                 <div className="form-group mb-4">
                     <label for="start-date" className="form-label"><b>Start Date</b></label>
-                    <input type="date" className="form-control" id="start-date" />
+                    <input type="date" className="form-control" id="start-date"  
+                        value={startDate} onChange={(e) => setStartDate(e.target.value)}/>
                 </div>
 
 
@@ -104,22 +141,22 @@ const PostingForm = () => {
                 <div className="form-group mb-4">
                     <label for="numberofopenings" className="form-label"><b>Number of openings</b></label>
                     <input type="text" className="form-control" id="numberofopenings" 
-                        placeholder="" />
+                        placeholder=""  value={openings} onChange={(e) => setOpenings(e.target.value)}/>
                 </div>
 
                 <div className="form-group mb-4">
                     <label for="skills-required" className="form-label"><b>Desired Skills</b></label>
                     <MultiSelect
-                        options={options}
-                        value={selected}
-                        onChange={setSelected}
+                        options={skillsList}
+                        value={skills}
+                        onChange={setSkills}
                         labelledBy="Select"
                     />
                 </div>
    
                 <div className="form-submit">
                     <div className="mt-4 ml-2 mr-2">
-                        <button type="submit" className ="btn btn-primary w-100" >Create</button>
+                        <button type="submit" className ="btn btn-primary w-100" onClick={(e) => createJobHandler(e)}>Create</button>
                     </div>
                 </div>
             </form>

@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Job from "../JobSummaryCard"
 import "./index.css"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { findExternalJobsThunk } from "../../../../services/jobs/jobs-thunks";
 
 const JobList = () => {
     const jobs = useSelector(state => state.jobsData).externalJobs
+    const isLoading = useSelector(state => state.jobsData).isLoading
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(findExternalJobsThunk())
+    }, [])
 
     return(
         <div className="container">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <Link to={`/app/jobs/search`} className="nav-link" aria-current="page">Internal Jobs</Link>
+                    <Link to={`/app/jobs/`} className="nav-link" aria-current="page">Internal Jobs</Link>
                 </li>
                 <li class="nav-item">
-                    <Link to="external" className="nav-link active">External Jobs</Link>
+                    <Link to={`/app/jobs/external`} className="nav-link active" aria-current="page">External Jobs</Link>
                 </li>
             </ul>
             <div className="d-flex justify-content-between wd-search-area p-3">

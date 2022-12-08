@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { findApplicationsThunk, withdrawApplicationThunk } from "../services/applications/applications-thunk";
+import { findApplicationsThunk, withdrawApplicationThunk, createApplicationThunk } from "../services/applications/applications-thunk";
 
 const initialState = {
     isLoading: true,
-    applications: true
+    applications: []
 }
 
 const applicationsSlice = createSlice({
@@ -11,19 +11,24 @@ const applicationsSlice = createSlice({
     initialState,
     extraReducers: {
         [findApplicationsThunk.pending]: 
-        (state) => {
+            (state) => {
             state.isLoading = true
             state.applications = []
         },
         [findApplicationsThunk.fulfilled]:
-        (state, {payload}) => {
+            (state, {payload}) => {
             state.isLoading = false
             state.applications = payload
         },
         [withdrawApplicationThunk.fulfilled]:
-        (state, {payload}) => {
+            (state, {payload}) => {
             state.isLoading = false
             state.applications = state.applications.filter(application => application._id !== payload)
+        },
+        [createApplicationThunk.fulfilled]:
+            (state, {payload}) => {
+            state.isLoading = false
+            state.applications.push(payload)
         }
     }
 })

@@ -3,17 +3,26 @@ import { useParams } from "react-router-dom";
 import "./JobDetail.css"
 import logo from "../../../assets/logo.png"
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { createApplicationThunk } from "../../../services/applications/applications-thunk";
 
-const JobDetail = () => {
+const JobDetail = (data) => {
+    const userDetails = useSelector(state => state.loginData).userDetails
     const urlParams = useParams();
     const jobId = urlParams.jobId;
-
+    const dispatch = useDispatch()
+    const applyHandler = () => {
+        const applicationDetails = {
+            uid: userDetails.uid
+        }
+        dispatch(createApplicationThunk())
+    }
     return(
         <div className="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><Link to="/app/recruiter">Home</Link></li>
-                    <li class="breadcrumb-item"><Link to="/app/jobs/search">Postings</Link></li>
+                    <li class="breadcrumb-item"><Link to="/app/student">Home</Link></li>
+                    <li class="breadcrumb-item"><Link to="/app/jobs/">Jobs</Link></li>
                     <li class="breadcrumb-item active" aria-current="page">Profile</li>
                 </ol>
             </nav>
@@ -29,7 +38,7 @@ const JobDetail = () => {
                 </div>
                 <div className="col-1 wd-apply-section">
                     <div>
-                        <button className="btn btn-primary btn-sm rounded-pill">Apply</button>
+                        <button className="btn btn-primary btn-sm rounded-pill" onClick={applyHandler}>Apply</button>
                     </div>
                 </div>
             </div>

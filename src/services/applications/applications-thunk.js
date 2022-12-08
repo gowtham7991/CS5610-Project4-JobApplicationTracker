@@ -5,6 +5,12 @@ export const findApplicationsThunk = createAsyncThunk(
     'applications', async (uid) => await service.findApplications(uid)
 )
 
+export const createApplicationThunk = createAsyncThunk(
+    'applications/create', async (applicationDetails) => {
+        await service.createApplication(applicationDetails)
+    }
+)
+
 export const withdrawApplicationThunk = createAsyncThunk(
     'applications/delete', async (applicationId) => {
         await service.withdrawApplication(applicationId)

@@ -33,7 +33,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Check all postings</h5>
                             <p className="card-text text-muted">All the postings you have created so far to view all the applicants</p>
-                            <Link to="/app/jobs/">view positing</Link>
+                            <Link to="/app/postings/">view positings</Link>
                         </div>
                     </div>
                     <div className="col card h-100 rounded border">
@@ -43,7 +43,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Public Profile</h5>
                             <p className="card-text text-muted">View for profile to add personal details to improve your chance of getting a job</p>
-                            <Link to="/recruiter/profile">view profile</Link>
+                            <Link to="./profile">view profile</Link>
                         </div>
                     </div>
                 </div>

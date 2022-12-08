@@ -1,11 +1,19 @@
 import React from "react";
 import Job from "../JobSummaryCard"
 import "./index.css"
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { findInternalJobsThunk } from "../../../../services/jobs/jobs-thunks";
+import { useEffect } from "react";
 
 const JobList = () => {
     const jobs = useSelector(state => state.jobsData).internalJobs
+    const isLoading = useSelector(state => state.jobsData).isLoading
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(findInternalJobsThunk())
+    }, [])
+
     return(
         <div className="container">
             <ul class="nav nav-tabs">
