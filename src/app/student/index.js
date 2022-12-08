@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import { configureStore } from '@reduxjs/toolkit';
 import profileReducer from "./profile/reducer/profile-reducer";
 
-const store = configureStore({reducer: {profile: profileReducer}});
+const store = configureStore({reducer: {user: profileReducer}});
 const StudentApp = () => {
     return (
         <Provider store={store}>
