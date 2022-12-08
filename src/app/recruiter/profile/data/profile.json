@@ -1,0 +1,18 @@
+[{
+    "email": "abc@northeastern.edu",
+    "name": {
+      "firstName": "ABC",
+      "lastName": ""
+    },
+    "dob": "07/21/1996",
+    "role": "RECRUITER",
+    "profile": {
+      "aboutMe": "Company ABC",
+      "linkedInURL": "String",
+      "website": "String",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+      "banner": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+      "department": "String",
+      "address": "String"
+    }
+  }]

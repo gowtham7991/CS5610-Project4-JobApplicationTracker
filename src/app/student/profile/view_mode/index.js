@@ -73,7 +73,7 @@ const ProfileComponent = () => {
 
                         {user.profile.skills.map(skill =>
                             <li>{skill}</li>
-                    )}
+                        )}
                     </ul>
                 </div>
             </div>
