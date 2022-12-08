@@ -1,12 +1,31 @@
 [{
-  "firstName": "Renuka",
-  "lastName": "Ganesh",
-  "handle": "@renukaganesh",
-  "profilePicture": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
-  "bannerPicture": "https://miro.medium.com/max/800/1*bc9pmTiyKR0WNPka2w3e0Q.png",
-  "about": "Some text here that describes me. I love dogs. I'd like to get a Samoyed one day and name him Riceball.",
-  "headline": "SDE Intern @Amazon",
-  "website": "https://www.google.com/",
-  "location": "Boston, MA",
-  "email": "ganesh.re@northeastern.edu"
-}]
+    "email": "ganesh.re@northeastern.edu",
+    "name": {
+      "firstName": "Renuka",
+      "lastName": "Ganesh"
+    },
+    "dob": "07/21/1996",
+    "role": "STUDENT",
+    "profile": {
+      "aboutMe": "String",
+      "linkedInURL": "String",
+      "githubURL": "String",
+      "workExperience": 4,
+      "skills": [
+        "JAVA",
+        "Python"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+      "banner": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+      "graduationDate": "05/07/2023",
+      "website": "String",
+      "companyName": "String",
+      "position": "String",
+      "mobileNumber": "Number",
+      "department": "String",
+      "address": "String",
+      "educationLevel": "String",
+      "major": "String",
+      "GPA": 3.9
+    }
+  }]
