@@ -16,21 +16,27 @@ const RecuiterRegisterPage = () => {
     let [password, setPassword] = useState('');
     let [company, setCompany] = useState('');
     let [role, setRole] = useState('');
+    let [dob, setDOB] = useState('');
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const recruiterRegisterHandler = () => {
         const registrationDetails = {
-            firstName,
-            lastName,
-            linkedinURL,
-            personalEmail,
-            workEmail,
-            password,
-            company,
-            role
+            name: {
+                firstName,
+                lastName,
+            },
+            "email" : "sddsdsd3434324@yahoo.com",
+            "password": "11111122222233333",
+            dob,
+            profile :{
+                linkedInURL: linkedinURL,
+                position: role,
+                companyName: company
+            },
         }
+
         dispatch(recruiterRegistrationThunk(registrationDetails));
         navigate('/login');
     }
@@ -101,6 +107,11 @@ const RecuiterRegisterPage = () => {
                                     <option>Hiring Manager</option>
                                     <option>Talent Lead</option>
                                 </select>
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="dob" className="form-label"><b>Password</b></label>
+                                <input type="date" className="form-control" id="dob" 
+                                    placeholder="date of birth" value={dob} onChange={(e) => setDOB(e.target.value)}/>
                             </div>
                             <div className="form-submit">
                                 <div className="mt-4 ml-2 mr-2">

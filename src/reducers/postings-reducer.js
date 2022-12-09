@@ -3,7 +3,7 @@ import { findAllPostingsThunk, findPostingsByCompanyThunk } from "../services/po
 
 const initialState = {
     isLoading: true,
-    postings: []
+    postings: [1,2,3]
 }
 
 const postingSlice = createSlice({

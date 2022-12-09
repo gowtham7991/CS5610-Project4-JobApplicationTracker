@@ -5,21 +5,23 @@ import bgImage from "../assets/login.png"
 import "./index.css"
 import logo from "../assets/logo.png"
 import { loginThunk } from "../services/login/login-thunks";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const LoginPage = () => {
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
     let navigate = useNavigate();
     let dispatch = useDispatch();
-
+    const userDetails = useSelector(state => state.loginData).userDetails
     const loginHandler = () => {
         const loginDetails = {
             email : email,
             password  :password
         }
         dispatch(loginThunk(loginDetails))
-        let newPath = '/app/student/'
+        
+        console.log(userDetails)
+        let newPath = `/app/${userDetails.role}`
         navigate(newPath)
     }
 

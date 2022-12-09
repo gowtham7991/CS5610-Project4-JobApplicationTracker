@@ -10,7 +10,7 @@ const CompanyCard = (data) => {
             <div className="card-body">
                 <h5 className="card-title">Company Name</h5>
                 <p className="card-text">Company Description</p>
-                <Link href="" className="btn btn-primary">Check Postings</Link>
+                <Link to="../postings/company/1" className="btn btn-primary">Check Postings</Link>
             </div>
         </div>
     );

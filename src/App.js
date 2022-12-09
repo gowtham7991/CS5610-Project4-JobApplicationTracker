@@ -16,9 +16,14 @@ import loginReducer from './reducers/login-reducer';
 import profileReducer from './reducers/profile-reducer';
 import jobsReducer from './reducers/jobs-reducer';
 import applicationsReducer from './reducers/applications-reducer';
+import postingReducer from "./reducers/postings-reducer"
+
 const store = configureStore(
   {
-    reducer : {loginData: loginReducer, profileDetails: profileReducer, jobsData: jobsReducer, applicationsData: applicationsReducer}
+    reducer : {loginData: loginReducer, profileDetails: profileReducer, 
+                jobsData: jobsReducer, applicationsData: applicationsReducer,
+                postingData: postingReducer
+    }
   }
 )
 

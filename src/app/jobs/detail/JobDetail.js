@@ -1,21 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./JobDetail.css"
 import logo from "../../../assets/logo.png"
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createApplicationThunk } from "../../../services/applications/applications-thunk";
+import { findJobByIdThunk } from "../../../services/jobs/jobs-thunks";
 
 const JobDetail = (data) => {
+    const dispatch = useDispatch()
     const userDetails = useSelector(state => state.loginData).userDetails
+    const jobDetails = useSelector(state => state.jobDetails)
     const urlParams = useParams();
     const jobId = urlParams.jobId;
-    const dispatch = useDispatch()
+
+    useEffect(dispatch(findJobByIdThunk(jobId)))
+
     const applyHandler = () => {
         const applicationDetails = {
             uid: userDetails.uid
         }
-        dispatch(createApplicationThunk())
+        dispatch(createApplicationThunk(applicationDetails))
     }
     return(
         <div className="container">

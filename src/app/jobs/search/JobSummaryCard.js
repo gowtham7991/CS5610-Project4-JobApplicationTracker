@@ -26,12 +26,6 @@ const JobSummaryCard = () => {
                     <small className="mx-2 text-muted">58 applicants</small>
                 </div>
                 <Link to="detail/11">view job</Link>
-                <div className={`d-${userDetails.role === "student" ? "none" : ""} mt-2`}>
-                    <Link to="11/applicants">view applicants</Link>
-                </div>
-                <div className="mt-2">
-                    <button className={`d-${userDetails.role === "student" ? "none" : ""} btn btn-danger btn-sm p-1`} style={{height:"30px"}}>Delete Job</button>
-                </div>
                 <hr />
                 <div>
                     <i class="fa fa-star-o mx-3" aria-hidden="true"></i>

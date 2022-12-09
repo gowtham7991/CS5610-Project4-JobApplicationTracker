@@ -11,19 +11,22 @@ const StudentRegisterPage = () => {
     let [lastName, setLastName] = useState('')
     let [email, setEmail] = useState('')
     let [password, setPassword] = useState('');
-    let [university, setUniversity] = useState('');
+    let [dob, setDOB] = useState('');
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const studentRegisterHandler = () => {
         const registrationDetails = {
-            firstName,
-            lastName,
+            name: {
+                firstName,
+                lastName,
+            },
             email,
             password,
-            university
+            dob
         }
+        console.log(registrationDetails)
         dispatch(studentRegistrationThunk(registrationDetails));
         navigate('/login')
     }
@@ -63,15 +66,9 @@ const StudentRegisterPage = () => {
                                     placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                             </div>
                             <div class="form-group mt-4">
-                                <label for="university" className="form-label"><b>University</b></label>
-                                <select class="form-control" id="university" value={university} onChange={(e) => setUniversity(e.target.value)}>
-                                    <option selected>select</option>
-                                    <option>Northeastern university</option>
-                                    <option>Massachussets Institute of Technology</option>
-                                    <option>Boston university</option>
-                                    <option>Harvard university</option>
-                                    <option>Wentworth Institute of Technology</option>
-                                </select>
+                                <label for="dob" className="form-label"><b>Password</b></label>
+                                <input type="date" className="form-control" id="dob" 
+                                    placeholder="date of birth" value={dob} onChange={(e) => setDOB(e.target.value)}/>
                             </div>
                             <div className="form-submit">
                                 <div className="mt-4 ml-2 mr-2">

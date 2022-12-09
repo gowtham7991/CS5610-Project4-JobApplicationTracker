@@ -5,7 +5,7 @@ import StudentComponent from "./student"
 import RecruiterComponent from "./recruiter"
 import AdminComponent from "./admin"
 import JobsComponent from "./jobs"
-import PostingsComponent from "./postings/search"
+import PostingsComponent from "./postings"
 
 const App = () => {
     return(

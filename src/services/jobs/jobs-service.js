@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_BASE = process.env.JOB_APP_API_BASE;
+const API_BASE = "https://jobapplicationtracker-server.onrender.com";
 const JOBS_API = `${API_BASE}/jobs`;
 
 export const findInternalJobs = async () => {
@@ -13,7 +13,7 @@ export const findExternalJobs = async () => {
 }
 
 export const findJobById = async (jobId) => {
-    const response = await axios.get(`${JOBS_API}/${jobId}`)
+    const response = await axios.get(`${JOBS_API}/detail/${jobId}`)
     return response.data
 }
 

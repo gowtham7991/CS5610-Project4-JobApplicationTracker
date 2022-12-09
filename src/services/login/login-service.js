@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_BASE = process.env.JOB_APP_API_BASE;
+const API_BASE = "https://jobapplicationtracker-server.onrender.com";
 const LOGIN_API = `${API_BASE}/login`;
 
 export const login = async (userCredentials) => {

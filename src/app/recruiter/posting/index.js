@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css"
 import { MultiSelect } from "react-multi-select-component";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createJobThunk } from "../../../services/jobs/jobs-thunks";
 
@@ -27,6 +27,8 @@ const PostingForm = () => {
     const [skills, setSkills] = useState([]);
     
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const createJobHandler = (e) => {
         e.preventDefault();
         const skillsSelected = skills.map(s => s.value)
@@ -46,6 +48,7 @@ const PostingForm = () => {
         }
         console.log(jobDetails)
         dispatch(createJobThunk(jobDetails))
+        navigate("../")
     }
     return(
         <div className="wd-job-posting container rounded bg-white mt-5">

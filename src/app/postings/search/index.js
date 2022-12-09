@@ -1,8 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Post from "./PostSummaryCard"
 
 const Postings = () => {
-    const posts = [1,2,3]
+    const posts = useSelector(state => state.postingData).postings
+    const isLoading = useSelector(state => state.postingData).isLoading
 
     return(
         <div className="container">

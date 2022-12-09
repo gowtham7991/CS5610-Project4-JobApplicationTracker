@@ -43,7 +43,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Public Profile</h5>
                             <p className="card-text text-muted">View for profile to add personal details to improve your chance of getting a job</p>
-                            <Link to={`profile/${userDetails.uid}`}>view profile</Link>
+                            <Link to={`profile/`}>view profile</Link>
                         </div>
                     </div>
                 </div>

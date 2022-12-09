@@ -13,8 +13,8 @@ export const findExternalJobsThunk = createAsyncThunk(
   })
 
 export const findJobByIdThunk = createAsyncThunk(
-    'jobs/findJobByid', async () =>
-      await service.findJobById()
+    'jobs/findJobByid', async (jobId) =>
+      await service.findJobById(jobId)
   )
 
 export const createJobThunk = createAsyncThunk(

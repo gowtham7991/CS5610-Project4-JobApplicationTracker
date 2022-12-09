@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { findProfileByIdThunk } from "../../../services/profile/profile-thunks";
 
 const Profile = () => {
     const userDetails = useSelector(state => state.loginData).userDetails
+    const profileDetails = useSelector(state => state.profileDetails)
     const params = useParams();
+    const dispatch = useDispatch()
     const uid = params.hasOwnProperty("uid") ? params.uid : userDetails.uid
     console.log(uid)
-
+    useEffect(dispatch(findProfileByIdThunk(uid)))
     return(
         <section>
             <div className="container py-5">

@@ -30,8 +30,8 @@ const loginSlice = createSlice({
             state.isLoggedIn = true
             state.userDetails = {
                 name: payload.name,
-                role: payload.role,
-                uid: payload.uid,
+                role: payload.role.toLowerCase(),
+                uid: payload._id,
                 email: payload.email
             }
         },
