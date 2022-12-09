@@ -33,7 +33,7 @@ const Home = () => {
                             </div>
                             <h5 className="card-title">Check all postings</h5>
                             <p className="card-text text-muted">All the postings you have created so far to view all the applicants</p>
-                            <Link to="/app/postings/">view positings</Link>
+                            <Link to={`/app/postings`}>view positings</Link>
                         </div>
                     </div>
                     <div className="col card h-100 rounded border">

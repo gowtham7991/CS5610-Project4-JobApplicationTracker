@@ -10,7 +10,7 @@ const Profile = () => {
     const dispatch = useDispatch()
     const uid = params.hasOwnProperty("uid") ? params.uid : userDetails.uid
     console.log(uid)
-    useEffect(dispatch(findProfileByIdThunk(uid)))
+    useEffect(() => {dispatch(findProfileByIdThunk(uid))}, [])
     return(
         <section>
             <div className="container py-5">

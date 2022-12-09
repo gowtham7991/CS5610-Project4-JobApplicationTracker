@@ -9,8 +9,7 @@ const Profile = () => {
                 <div className="col">
                     <nav aria-label="breadcrumb" className="bg-light rounded-3 p-3 mb-4">
                     <ol className="breadcrumb mb-0">
-                        <li className="breadcrumb-item"><a href="#">Home</a></li>
-                        <li className="breadcrumb-item"><a href="#">User</a></li>
+                        <li className="breadcrumb-item"><Link to="../">Home</Link></li>
                         <li className="breadcrumb-item active" aria-current="page">User Profile</li>
                     </ol>
                     </nav>
@@ -26,10 +25,6 @@ const Profile = () => {
                         <h5 className="my-3">John Smith</h5>
                         <p className="text-muted mb-1">Full Stack Developer</p>
                         <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
-                        <div className="d-flex justify-content-center mb-2">
-                            <Link to="../edit-profile" className="btn btn-outline-primary">Edit Profile</Link>
-                        
-                        </div>
                     </div>
                     </div>
                     

@@ -14,7 +14,9 @@ const JobDetail = (data) => {
     const urlParams = useParams();
     const jobId = urlParams.jobId;
 
-    useEffect(dispatch(findJobByIdThunk(jobId)))
+    useEffect(() => {
+        dispatch(findJobByIdThunk(jobId))
+    }, [])
 
     const applyHandler = () => {
         const applicationDetails = {

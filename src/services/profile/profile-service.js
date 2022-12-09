@@ -8,6 +8,6 @@ export const findProfileById = async (uid) => {
 }
 
 export const saveProfile = async (profileDetails) => {
-    const response = await axios.post(`${PROFILE_API}/${profileDetails.uid}`, profileDetails)
+    const response = await axios.put(`${PROFILE_API}/${profileDetails.uid}`, profileDetails)
     return response.data
 }

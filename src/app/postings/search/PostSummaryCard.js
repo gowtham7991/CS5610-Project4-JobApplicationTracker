@@ -25,7 +25,7 @@ const PostSummaryCard = () => {
                     <small className="mx-2 text-muted">58 applicants</small>
                 </div>
                 <div className={`mt-2`}>
-                    <Link to={`../${"1"}/applicants`}>view applicants</Link>
+                    <Link to={`/app/postings/job/${"1"}/applicants`}>view applicants</Link>
                 </div>
                 <div className="mt-2">
                     <button className={`btn btn-danger btn-sm p-1`} style={{height:"30px"}}>Delete Job</button>

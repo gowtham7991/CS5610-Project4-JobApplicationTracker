@@ -9,5 +9,6 @@ export const findPostings = async () => {
 
 export const findPostingsByCompany = async (companyId) => {
     const response = await axios.get(`${POSTINGS_API}/company/${companyId}`);
+    console.log(response.data)
     return response.data;
 }

@@ -7,7 +7,5 @@ export const findAllPostingsThunk = createAsyncThunk(
 )
 
 export const findPostingsByCompanyThunk = createAsyncThunk(
-    'postings/company',
-    async (companyId) => {
-      await service.findPostingsByCompany(companyId)
-  })
+    'postings/company', async (companyId) => await service.findPostingsByCompany(companyId)
+)

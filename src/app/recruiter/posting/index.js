@@ -55,7 +55,7 @@ const PostingForm = () => {
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><Link to="/app/recruiter">Home</Link></li>
-                    <li class="breadcrumb-item"><Link to="/app/jobs/">Postings</Link></li>
+                    <li class="breadcrumb-item"><Link to="/app/postings/">Postings</Link></li>
                     <li class="breadcrumb-item active" aria-current="page">Profile</li>
                 </ol>
             </nav>

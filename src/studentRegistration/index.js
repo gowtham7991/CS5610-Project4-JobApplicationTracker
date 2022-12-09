@@ -7,29 +7,33 @@ import { studentRegistrationThunk } from "../services/registration/registration-
 import { useDispatch } from "react-redux";
 
 const StudentRegisterPage = () => {
-    let [firstName, setFirstName] = useState('')
-    let [lastName, setLastName] = useState('')
-    let [email, setEmail] = useState('')
-    let [password, setPassword] = useState('');
-    let [dob, setDOB] = useState('');
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('');
+    const [dob, setDOB] = useState('');
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const studentRegisterHandler = () => {
+    const studentRegisterHandler = e => {
+        e.preventDefault();
         const registrationDetails = {
-            name: {
-                firstName,
-                lastName,
+           
+            "email": email,
+            "password": password,
+            "name" : {
+                "firstName": firstName,
+                "lastName": lastName
             },
-            email,
-            password,
-            dob
+            "dob": dob
         }
+
         console.log(registrationDetails)
         dispatch(studentRegistrationThunk(registrationDetails));
         navigate('/login')
     }
+    
     return (
         <div>
             <div className="row m-0 wd-login-page">
@@ -42,7 +46,7 @@ const StudentRegisterPage = () => {
                     <div className="wd-login-form">
                         <h1 style={{fontSize:"3rem"}}>Sign up</h1>
                         <div className="mt-4 mb-4"><span style={{fontWeight:"400"}}>Not a student?</span> <Link to="/register/recruiter">Register as recruiter</Link></div>
-                        <form>
+                        <form onSubmit={studentRegisterHandler}>
                             <div className="row">
                                 <div class="col form-group mt-4">
                                     <label for="fisrt-name" className="form-label"><b>First Name</b></label>
@@ -66,13 +70,13 @@ const StudentRegisterPage = () => {
                                     placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                             </div>
                             <div class="form-group mt-4">
-                                <label for="dob" className="form-label"><b>Password</b></label>
+                                <label for="dob" className="form-label"><b>Date of Birth</b></label>
                                 <input type="date" className="form-control" id="dob" 
                                     placeholder="date of birth" value={dob} onChange={(e) => setDOB(e.target.value)}/>
                             </div>
                             <div className="form-submit">
                                 <div className="mt-4 ml-2 mr-2">
-                                    <button type="submit" className ="btn btn-primary w-100" onClick={studentRegisterHandler}>Sign up</button>
+                                    <button type="submit" className ="btn btn-primary w-100">Sign up</button>
                                 </div>
                                 
                             </div>

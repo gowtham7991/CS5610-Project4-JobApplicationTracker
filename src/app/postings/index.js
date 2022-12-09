@@ -7,7 +7,7 @@ const Postings = () => {
         <Routes>
             <Route path="" element={<PostingList />}/>
             <Route path="company/:companyId" element={<PostingList />}/>
-            <Route path=":jobId/applicants" element={<ApplicantList />}/>
+            <Route path="job/:jobId/applicants" element={<ApplicantList />}/>
         </Routes>
     );
 }

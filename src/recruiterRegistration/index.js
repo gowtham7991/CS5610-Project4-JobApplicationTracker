@@ -23,17 +23,17 @@ const RecuiterRegisterPage = () => {
 
     const recruiterRegisterHandler = () => {
         const registrationDetails = {
-            name: {
-                firstName,
-                lastName,
+            "name": {
+                "firstName" : firstName,
+                "lastName" : lastName,
             },
-            "email" : "sddsdsd3434324@yahoo.com",
-            "password": "11111122222233333",
-            dob,
+            "email" : personalEmail,
+            "password": password,
+            "dob" : dob,
             profile :{
-                linkedInURL: linkedinURL,
-                position: role,
-                companyName: company
+                "linkedInURL": linkedinURL,
+                "position": role,
+                "companyName": company
             },
         }
 
@@ -109,7 +109,7 @@ const RecuiterRegisterPage = () => {
                                 </select>
                             </div>
                             <div class="form-group mt-4">
-                                <label for="dob" className="form-label"><b>Password</b></label>
+                                <label for="dob" className="form-label"><b>Date of Birth</b></label>
                                 <input type="date" className="form-control" id="dob" 
                                     placeholder="date of birth" value={dob} onChange={(e) => setDOB(e.target.value)}/>
                             </div>
