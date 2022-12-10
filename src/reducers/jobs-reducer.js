@@ -36,6 +36,7 @@ const JobsSlice = createSlice({
         (state, {payload}) => {
             state.isLoading = false
             state.externalJobs = payload
+            console.log('jobs-reducer', {payload})
         },
         [findExternalJobsThunk.rejected]:
         (state) => {
