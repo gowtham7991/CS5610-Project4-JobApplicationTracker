@@ -4,7 +4,7 @@ import { findInternalJobsThunk, findExternalJobsThunk, findJobByIdThunk, createJ
 const initialState = {
     isLoading: true,
     internalJobs: [1,2,3],
-    externalJobs: [1,2,3],
+    externalJobs: [],
     jobDetails: {}
 }
 
@@ -36,6 +36,7 @@ const JobsSlice = createSlice({
         (state, {payload}) => {
             state.isLoading = false
             state.externalJobs = payload
+            console.log('jobs-reducer', {payload})
         },
         [findExternalJobsThunk.rejected]:
         (state) => {

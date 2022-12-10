@@ -8,8 +8,9 @@ export const findInternalJobsThunk = createAsyncThunk(
 
 export const findExternalJobsThunk = createAsyncThunk(
     'jobs/findExternalJobs',
-    async () => {
-      await service.findExternalJobs()
+    async (params) => {
+      const jobs = await service.findExternalJobs(params);
+      return jobs;
   })
 
 export const findJobByIdThunk = createAsyncThunk(
