@@ -75,7 +75,7 @@ const JobList = () => {
                 <div className="grid-container">
                 {jobs.map(job => 
                     <div className="grid-item">
-                        <Job />
+                        <Job data={job}/>
                     </div>)
                 }
                 </div>

@@ -17,12 +17,13 @@ import profileReducer from './reducers/profile-reducer';
 import jobsReducer from './reducers/jobs-reducer';
 import applicationsReducer from './reducers/applications-reducer';
 import postingReducer from "./reducers/postings-reducer"
+import companyReducer from "./reducers/companies-reducer"
 
 const store = configureStore(
   {
-    reducer : {loginData: loginReducer, profileDetails: profileReducer, 
+    reducer : {loginData: loginReducer, profileData: profileReducer, 
                 jobsData: jobsReducer, applicationsData: applicationsReducer,
-                postingData: postingReducer
+                postingData: postingReducer, companiesData: companyReducer
     }
   }
 )

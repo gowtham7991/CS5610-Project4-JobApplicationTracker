@@ -8,7 +8,7 @@ export const findApplications = async (uid) => {
 }
 
 export const findApplicationsByJobId = async (uid) => {
-    const response = await axios.get(`${APPLICATIONS_API}/job/${uid}`)
+    const response = await axios.get(`${APPLICATIONS_API}/jobs/${uid}`)
     return response.data
 }
 

@@ -5,15 +5,20 @@ import { findProfileByIdThunk } from "../../../services/profile/profile-thunks";
 
 const Profile = () => {
     const userDetails = useSelector(state => state.loginData).userDetails
-    const profileDetails = useSelector(state => state.profileDetails)
+    const data = useSelector(state => state.profileData).profileDetails
+    const profileData = data.profile
+    const isLoading = useSelector(state => state.profileData).isLoading
     const params = useParams();
     const dispatch = useDispatch()
-    const uid = params.hasOwnProperty("uid") ? params.uid : userDetails.uid
-    console.log(uid)
+    const uid = params.hasOwnProperty("uid") ? params.uid : userDetails._id
     useEffect(() => {dispatch(findProfileByIdThunk(uid))}, [])
+    console.log(data)
+    
     return(
         <section>
-            <div className="container py-5">
+            {
+                !isLoading && 
+                <div className="container py-5">
                 <div className="row">
                 <div className="col">
                     <nav aria-label="breadcrumb" className="bg-light rounded-3 p-3 mb-4">
@@ -31,9 +36,9 @@ const Profile = () => {
                     <div className="card-body text-center">
                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                         className="rounded-circle img-fluid"/>
-                        <h5 className="my-3">John Smith</h5>
-                        <p className="text-muted mb-1">Full Stack Developer</p>
-                        <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                        <h5 className="my-3">{`${data.name.firstName} ${data.name.lastName}`}</h5>
+                        <p className="text-muted mb-1">Student</p>
+                        <p className="text-muted mb-4">{profileData.address}</p>
                         <div className="d-flex justify-content-center mb-2">
                             <Link to="../edit-profile" className="btn btn-outline-primary">Edit Profile</Link>
                         
@@ -50,7 +55,7 @@ const Profile = () => {
                             <p className="mb-0">Full Name</p>
                         </div>
                         <div className="col-sm-9">
-                            <p className="text-muted mb-0">Johnatan Smith</p>
+                            <p className="text-muted mb-0">{`${data.name.firstName} ${data.name.lastName}`}</p>
                         </div>
                         </div>
                         <hr/>
@@ -59,7 +64,7 @@ const Profile = () => {
                             <p className="mb-0">Email</p>
                         </div>
                         <div className="col-sm-9">
-                            <p className="text-muted mb-0">example@example.com</p>
+                            <p className="text-muted mb-0">{data.email}</p>
                         </div>
                         </div>
                         <hr/>
@@ -68,16 +73,7 @@ const Profile = () => {
                             <p className="mb-0">Phone</p>
                         </div>
                         <div className="col-sm-9">
-                            <p className="text-muted mb-0">(097) 234-5678</p>
-                        </div>
-                        </div>
-                        <hr/>
-                        <div className="row">
-                        <div className="col-sm-3">
-                            <p className="mb-0">Mobile</p>
-                        </div>
-                        <div className="col-sm-9">
-                            <p className="text-muted mb-0">(098) 765-4321</p>
+                            <p className="text-muted mb-0">{profileData.mobileNumber}</p>
                         </div>
                         </div>
                         <hr/>
@@ -86,7 +82,7 @@ const Profile = () => {
                             <p className="mb-0">Address</p>
                         </div>
                         <div className="col-sm-9">
-                            <p className="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                            <p className="text-muted mb-0">{profileData.address}</p>
                         </div>
                         </div>
                     </div>
@@ -95,9 +91,9 @@ const Profile = () => {
                         <div className="card-body">
                         <p className="h5">Education</p>
                         <p className="h6 text-muted">Northeastern University</p>
-                        <p className="h6 text-muted">Master's Degree</p>
-                        <p className="h6 text-muted">Computer Science</p>
-                        <p className="h6 text-muted">GPA: 4.0</p>
+                        <p className="h6 text-muted">{profileData.educationLevel}</p>
+                        <p className="h6 text-muted">{profileData.major}</p>
+                        <p className="h6 text-muted">{`GPA: ${profileData.GPA}`}</p>
                         </div>
                         </div>
                     <div className="row">
@@ -108,11 +104,11 @@ const Profile = () => {
                                 <p className="h5">Skills</p>
                                 
                                 <div className="row my-2">
-                                        <span class="col-3 badge rounded-pill bg-light text-dark border m-2">Python</span>
-                                        <span class="col-3 badge rounded-pill bg-light text-dark border m-2">Python</span>
-                                        <span class="col-3 badge rounded-pill bg-light text-dark border m-2">Python</span>
-                                        <span class="col-3 badge rounded-pill bg-light text-dark border m-2">Python</span>
-                                        <span class="col-3 badge rounded-pill bg-light text-dark border m-2">Python</span>
+                                    {
+                                        profileData.skills.map(skill => 
+                                            <span class="col-3 badge rounded-pill bg-light text-dark border m-2">{skill}</span>
+                                        )
+                                    }                                        
 
                                     </div>
                             </div>
@@ -124,23 +120,23 @@ const Profile = () => {
                                     <ul className="list-group list-group-flush rounded-3">
                                     <li className="list-group-item d-flex justify-content-between align-items-center p-3">
                                         <i className="fas fa-globe fa-lg text-warning"></i>
-                                        <p className="mb-0">https://mdbootstrap.com</p>
+                                        <p className="mb-0">{`https://${data.name.firstName.toLowerCase()}${data.name.lastName.toLowerCase()}.com`}</p>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center p-3">
                                         <i className="fab fa-github fa-lg"></i>
-                                        <p className="mb-0">mdbootstrap</p>
+                                        <p className="mb-0">{profileData.githubURL}</p>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center p-3">
                                         <i className="fab fa-linkedin fa-lg" ></i>
-                                        <p className="mb-0">mdbootstrap</p>
+                                        <p className="mb-0">{profileData.linkedInURL}</p>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center p-3">
                                         <i className="fab fa-twitter fa-lg" ></i>
-                                        <p className="mb-0">@mdbootstrap</p>
+                                        <p className="mb-0">{`@${data.name.firstName.toLowerCase()}${data.name.lastName.toLowerCase()}`}</p>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center p-3">
                                         <i className="fab fa-facebook-f fa-lg" ></i>
-                                        <p className="mb-0">mdbootstrap</p>
+                                        <p className="mb-0">{`${data.name.firstName} ${data.name.lastName}`}</p>
                                     </li>
                                     </ul>
                                 </div>
@@ -150,6 +146,7 @@ const Profile = () => {
                 </div>
                 </div>
             </div>
+            }
         </section>
     );
 }

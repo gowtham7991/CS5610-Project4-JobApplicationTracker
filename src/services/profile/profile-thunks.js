@@ -3,6 +3,7 @@ import * as service from "./profile-service"
 
 export const findProfileByIdThunk = createAsyncThunk(
     'profile/get', async (uid) => await service.findProfileById(uid)
+    
 )
 
 export const saveProfileThunk = createAsyncThunk(

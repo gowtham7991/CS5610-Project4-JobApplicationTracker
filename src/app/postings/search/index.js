@@ -10,12 +10,12 @@ const Postings = () => {
     const isLoading = useSelector(state => state.postingData).isLoading
     const params = useParams()
     const dispatch = useDispatch()
+    console.log(userDetails)
     const companyId = params.hasOwnProperty("companyId") ? params.companyId : userDetails.companyId
-    console.log(companyId)
-   /*  useEffect(() => {
+    useEffect(() => {
         dispatch(findPostingsByCompanyThunk(companyId))
-    }, []) */
-    
+    }, [])
+
     return(
         <div className="container">
             <p className="h5">Recent Postings</p>
@@ -23,7 +23,7 @@ const Postings = () => {
                 <div className="grid-container">
                 {posts.map(posting => 
                     <div className="grid-item">
-                        <Post />
+                        <Post data={posting}/>
                     </div>)
                 }
                 </div>

@@ -6,6 +6,7 @@ import "./index.css"
 import logo from "../assets/logo.png"
 import { loginThunk } from "../services/login/login-thunks";
 import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 const LoginPage = () => {
     let [email, setEmail] = useState('');
@@ -13,16 +14,28 @@ const LoginPage = () => {
     let navigate = useNavigate();
     let dispatch = useDispatch();
     const userDetails = useSelector(state => state.loginData).userDetails
-    const loginHandler = () => {
+    const isLoggedIn = useSelector(state => state.loginData).isLoggedIn
+
+    const loginHandler = (e) => {
+        e.preventDefault()
         const loginDetails = {
             email : email,
             password  :password
         }
+
         dispatch(loginThunk(loginDetails))
-        
-        console.log(userDetails)
-        let newPath = `/app/${userDetails.role}`
-        navigate(newPath)
+    }
+
+    if(isLoggedIn) {
+        if (userDetails.role === "STUDENT") {
+            return (<Navigate to={'/app/student'}/>)
+        } else if(userDetails.role === "RECRUITER") {
+            return (<Navigate to={'/app/recruiter'}/>)
+        } else if(userDetails.role === "ADMIN") {
+            return (<Navigate to={'/app/admin'}/>)
+        } else {
+            return (<Navigate to={'/'}/>)
+        }
     }
 
     return (
@@ -40,7 +53,7 @@ const LoginPage = () => {
                         <span className="d-flex justify-content-between">
                             <hr className="w-46 d-inline-block"/> or <hr className="d-inline-block"/>
                         </span>
-                        <form>
+                        <form onSubmit={(e) => loginHandler(e)}>
                             <div class="form-group mt-4">
                                 <label for="exampleInputEmail1" className="form-label"><b>Email address</b></label>
                                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
@@ -53,7 +66,7 @@ const LoginPage = () => {
                             </div>
                             <div className="form-submit">
                                 <div className="mt-4 ml-2 mr-2">
-                                    <button type="submit" className ="btn btn-primary w-100" onClick={loginHandler}>Log In</button>
+                                    <button type="submit" className ="btn btn-primary w-100">Log In</button>
                                 </div>
                                 
                             </div>

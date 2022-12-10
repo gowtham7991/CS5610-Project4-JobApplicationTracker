@@ -3,8 +3,8 @@ import { findInternalJobsThunk, findExternalJobsThunk, findJobByIdThunk, createJ
 
 const initialState = {
     isLoading: true,
-    internalJobs: [1,2,3],
-    externalJobs: [1,2,3],
+    internalJobs: [],
+    externalJobs: [],
     jobDetails: {}
 }
 

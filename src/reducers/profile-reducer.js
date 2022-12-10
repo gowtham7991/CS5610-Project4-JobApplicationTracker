@@ -2,7 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { saveProfileThunk, findProfileByIdThunk } from "../services/profile/profile-thunks";
 
 const initialState = {
-    profileDetails : {},
+    profileDetails : {
+        profile: {}
+    },
     isLoading: true
 }
 

@@ -13,7 +13,7 @@ export const findExternalJobs = async () => {
 }
 
 export const findJobById = async (jobId) => {
-    const response = await axios.get(`${JOBS_API}/detail/${jobId}`)
+    const response = await axios.get(`${JOBS_API}/${jobId}`)
     return response.data
 }
 

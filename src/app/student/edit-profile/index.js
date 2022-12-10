@@ -3,14 +3,27 @@ import { MultiSelect } from "react-multi-select-component";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { saveProfileThunk } from "../../../services/profile/profile-thunks";
+import { findProfileByIdThunk } from "../../../services/profile/profile-thunks";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const EditProfile = () => {
+    const data = useSelector(state => state.profileData).profileDetails
+    const userDetails = useSelector(state => state.loginData).userDetails
+    const isLoading = useSelector(state => state.profileData).isLoading
+    const profileData = data.profile
     const skillList = [{ label: "Grapes 🍇", value: "grapes" },
         { label: "Mango 🥭", value: "mango" },
         { label: "Strawberry 🍓", value: "strawberry", disabled: true },];
+    
+    const dispatch = useDispatch()
+    const params = useParams();
+    const uid = params.hasOwnProperty("uid") ? params.uid : userDetails.uid
+    useEffect(() => {dispatch(findProfileByIdThunk(uid))}, [])
+    
     const [skills, setSkills] = useState([]);
-    const [firstName, setFirstName] = useState([]);
-    const [lastName, setLastName] = useState([]);
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [aboutMe, setAboutMe] = useState([]);
     const [mobileNumber, setMobileNumber] = useState([]);
     const [graduationDate, setGraduationDate] = useState([]);
@@ -21,8 +34,6 @@ const EditProfile = () => {
     const [linkedInURL, setLikedinURL] = useState([]);
     const [githubURL, setGithubURL] = useState([]);
     const [website, setWesbite] = useState([]);
-    const userDetails = useSelector(state => state.loginData).userDetails
-    const dispatch = useDispatch()
     const saveProfileHandler = () => {
         const skillsSelected = skills.map(skill => skill.value)
         const profileDetails = {   
@@ -50,7 +61,10 @@ const EditProfile = () => {
 
     return(
         <div className="container rounded bg-white mt-5 mb-5">
-            <nav aria-label="breadcrumb">
+            {
+                !isLoading && 
+                <div>
+                    <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><Link to="/app/student">Home</Link></li>
                     <li class="breadcrumb-item"><Link to="/app/jobs/">Jobs</Link></li>
@@ -124,6 +138,8 @@ const EditProfile = () => {
                     </div>
                 </div>
             </div>
+                </div>   
+            }
         </div>
         );
 }

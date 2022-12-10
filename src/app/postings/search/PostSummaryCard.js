@@ -4,7 +4,8 @@ import "./PostSummaryCard.css"
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const PostSummaryCard = () => {
+const PostSummaryCard = (post) => {
+    const data = post.data
 
     return(
         <div class="card">
@@ -18,14 +19,14 @@ const PostSummaryCard = () => {
                 </div>
             </div>
             <div className="card-body">
-                <h5 className="card-title">Software Engineer</h5>
-                <p className="mb-2 card-text">Co-op</p>
+                <h5 className="card-title">{data.positionName}</h5>
+                <p className="mb-2 card-text">{data.positionType}</p>
                 <div className="mb-2">
                     <i className="fa fa-user" aria-hidden="true"></i>
-                    <small className="mx-2 text-muted">58 applicants</small>
+                    <small className="mx-2 text-muted">{`${"0"} applicants`}</small>
                 </div>
                 <div className={`mt-2`}>
-                    <Link to={`/app/postings/job/${"1"}/applicants`}>view applicants</Link>
+                    <Link to={`/app/postings/job/${data._id}/applicants`}>view applicants</Link>
                 </div>
                 <div className="mt-2">
                     <button className={`btn btn-danger btn-sm p-1`} style={{height:"30px"}}>Delete Job</button>

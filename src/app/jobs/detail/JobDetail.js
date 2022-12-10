@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { createApplicationThunk } from "../../../services/applications/applications-thunk";
 import { findJobByIdThunk } from "../../../services/jobs/jobs-thunks";
 
-const JobDetail = (data) => {
+const JobDetail = () => {
     const dispatch = useDispatch()
     const userDetails = useSelector(state => state.loginData).userDetails
-    const jobDetails = useSelector(state => state.jobDetails)
+    const jobDetails = useSelector(state => state.jobsData).jobDetails
     const urlParams = useParams();
     const jobId = urlParams.jobId;
 
@@ -24,6 +24,7 @@ const JobDetail = (data) => {
         }
         dispatch(createApplicationThunk(applicationDetails))
     }
+    console.log(jobDetails)
     return(
         <div className="container">
             <nav aria-label="breadcrumb">
@@ -39,9 +40,9 @@ const JobDetail = (data) => {
                     <img src={logo}/>
                 </div>
                 <div className="col-10 wd-section-header">
-                    <h1>Accounting Methods and Periods Tax Associate - Fall 2022</h1>
-                    <div className="text-muted">Company Name</div>
-                    <div className="text-muted">Job Type</div>
+                    <h1>{jobDetails.positionName}</h1>
+                    <div className="text-muted">{jobDetails.company}</div>
+                    <div className="text-muted">{jobDetails.positionType}</div>
                 </div>
                 <div className="col-1 wd-apply-section">
                     <div>
@@ -53,11 +54,11 @@ const JobDetail = (data) => {
                 <div className="wd-job-summary border-bottom">
                     <div>
                         <p className="h6">Position Type</p>
-                        <p className="h6 text-muted">Co-op</p>
+                        <p className="h6 text-muted">{jobDetails.positionType}</p>
                     </div>
                     <div className="mt-3">
                         <p className="h6">Number of openings</p>
-                        <p className="h6 text-muted">1</p>
+                        <p className="h6 text-muted">{jobDetails.numOpenings}</p>
                     </div>
                 </div>
                 <div className="wd-job-description border-bottom mt-2">
@@ -72,11 +73,9 @@ const JobDetail = (data) => {
                     <div className="wd-job-desired-skill">
                         <p className="h6">Desired Skills</p>
                         <div className="row my-2">
-                            <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">Python</span>
-                            <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">Java</span>
-                            <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">C++</span>
-                            <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">AWS</span>
-                            <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">Linux</span>
+                            {
+                                jobDetails.skillsReqd.map(skill => <span class="col-2 badge rounded-pill bg-light text-dark border mx-2">{skill}</span> )
+                            }                            
                         </div>
                     </div>
                 </div>
@@ -91,11 +90,11 @@ const JobDetail = (data) => {
                     </div>
                     <div className="mt-3">
                         <p className="h6">Payment Type</p>
-                        <p className="h6 text-muted">Hourly $35-$42</p>
+                        <p className="h6 text-muted">{`Hourly $${jobDetails.pay}`}</p>
                     </div>
                     <div className="mt-3">
                         <p className="h6">Job Duration</p>
-                        <p className="h6 text-muted">6 month</p>
+                        <p className="h6 text-muted">{`${jobDetails.jobLength} months`}</p>
                     </div>
                 </div>
             </div>
@@ -105,11 +104,11 @@ const JobDetail = (data) => {
                     <div className="wd-sidebar-body">
                         <div>
                             <p className="h6 text-muted">Posted on: </p>
-                            <p className="h6 text-muted">Dec 04, 2022</p>
+                            <p className="h6 text-muted">{jobDetails.dateOfPosting.split("T")[0]}</p>
                         </div>
                         <div>
                             <p className="h6 text-muted">Application Deadline: </p>
-                            <p className="h6 text-muted">Jan 10, 2023</p>
+                            <p className="h6 text-muted">{jobDetails.deadlineToApply.split("T")[0]}</p>
                         </div>
                     </div>
                 </div>
