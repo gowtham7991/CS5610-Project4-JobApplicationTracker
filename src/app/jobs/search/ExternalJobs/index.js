@@ -25,7 +25,7 @@ const JobList = () => {
     }
 
     return(
-        <div className="container">
+        <div className="container p-5">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <Link to={`/app/jobs/`} className="nav-link" aria-current="page">Internal Jobs</Link>
@@ -41,7 +41,7 @@ const JobList = () => {
             </div>
             <div className="d-flex wd-filter-selection p-3">
                 <div className="wd-filter-field">
-                    <label htmlFor="country">Country:</label>
+                    <label htmlFor="country">Country</label>
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="country" id="country" onChange={(e)=>setCountry(e.target.value)}>
                         <option value="us" selected>US</option>
                         <option value="gb">GB</option>
@@ -49,8 +49,9 @@ const JobList = () => {
                         <option value="in">IN</option>
                     </select>
                 </div>
+
                 <div className="wd-filter-field">
-                    <label htmlFor="sort_by">Sort by:</label>
+                    <label htmlFor="sort_by">Sort by</label>
                     <select name="sort_by" id="sort_by" class="form-select form-select-sm" aria-label=".form-select-sm example" onChange={(e)=>setSortBy(e.target.value)}>
                         <option value="date" selected>Date</option>
                         <option value="salary">Salary</option>

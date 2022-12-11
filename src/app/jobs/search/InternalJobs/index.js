@@ -16,7 +16,7 @@ const JobList = () => {
     }, [])
 
     return(
-        <div className="container">
+        <div className="container  p-5">
            {
             !isLoading &&
             <div>
