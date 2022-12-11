@@ -11,10 +11,11 @@ const NavBar = () => {
     
     return (
         <div >
-            <div className="d-flex justify-content-between wd-main-navbar bg-light shadow p-2">
+            <div className="wd-navbar">
+            {/*<div className="d-flex justify-content-between wd-main-navbar bg-light shadow p-2">*/}
                 <div>
                     <Link to={`/app/${userRole.toLowerCase()}`}>
-                        <img src={logo} alt="" width="200" height="50" class="d-inline-block align-text-top"/>
+                        <img src={logo} alt="" width="200" height="50" class="wd-navlogo"/>
                     </Link>
                 </div>
                 <div className="d-flex">
