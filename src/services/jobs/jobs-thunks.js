@@ -2,8 +2,8 @@ import {createAsyncThunk} from "@reduxjs/toolkit"
 import * as service from "./jobs-service"
 
 export const findInternalJobsThunk = createAsyncThunk(
-  'jobs/findJobs', async () =>
-    await service.findInternalJobs()
+  'jobs/findJobs', async (params) =>
+    await service.findInternalJobs(params)
 )
 
 export const findExternalJobsThunk = createAsyncThunk(

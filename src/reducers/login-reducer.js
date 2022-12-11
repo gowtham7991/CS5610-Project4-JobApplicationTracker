@@ -28,7 +28,7 @@ const initialState = {
             GPA: ""
         }
     },
-    isLoggedIn: false
+    isLoggedIn: false,
 }
 
 const loginSlice = createSlice({

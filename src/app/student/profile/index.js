@@ -12,7 +12,7 @@ const Profile = () => {
     const dispatch = useDispatch()
     const uid = params.hasOwnProperty("uid") ? params.uid : userDetails._id
     useEffect(() => {dispatch(findProfileByIdThunk(uid))}, [])
-    console.log(data)
+    console.log(uid)
     
     return(
         <section>
@@ -48,7 +48,7 @@ const Profile = () => {
                     
                 </div>
                 <div className="col-lg-8">
-                    <div className="card mb-4">
+                    <div className={`d-${uid === userDetails._id ? "" : "none"} card mb-4`}>
                     <div className="card-body">
                         <div className="row">
                         <div className="col-sm-3">
@@ -97,24 +97,7 @@ const Profile = () => {
                         </div>
                         </div>
                     <div className="row">
-                        <div className="col-md-6">
-                            <div className="card mb-4 mb-md-0 p-2">
-                            <div className="card-body">
-                                
-                                <p className="h5">Skills</p>
-                                
-                                <div className="row my-2">
-                                    {
-                                        profileData.skills.map(skill => 
-                                            <span class="col-3 badge rounded-pill bg-light text-dark border m-2">{skill}</span>
-                                        )
-                                    }                                        
-
-                                    </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
+                    <div className="col-md-6">
                             <div className="card mb-4 mb-lg-0">
                                 <div className="card-body p-0">
                                     <ul className="list-group list-group-flush rounded-3">
@@ -142,6 +125,24 @@ const Profile = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className="col-md-6">
+                            <div className="card mb-4 mb-md-0 p-2">
+                            <div className="card-body">
+                                
+                                <p className="h5">Skills</p>
+                                
+                                <div className="row my-2">
+                                    {
+                                        profileData.skills.map(skill => 
+                                            <span class="col-3 badge rounded-pill bg-light text-dark border m-2">{skill}</span>
+                                        )
+                                    }                                        
+
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 </div>

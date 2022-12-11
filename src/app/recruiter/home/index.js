@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css"
 import { Link } from "react-router-dom";
-import bannerImg from "../../../assets/recruiterHome.jpg"
+import bannerImg from "../../../assets/recruiterHome.png"
 import { useSelector } from "react-redux";
 
 const Home = () => {

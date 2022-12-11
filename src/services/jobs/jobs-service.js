@@ -2,8 +2,12 @@ import axios from 'axios'
 const API_BASE = "https://jobapplicationtracker-server.onrender.com";
 const JOBS_API = `${API_BASE}/jobs`;
 
-export const findInternalJobs = async () => {
-    const response = await axios.get(JOBS_API);
+export const findInternalJobs = async (params) => {
+    console.log(params)
+    const type = params.paymentType
+    const company = params.company
+    const term = params.term
+    const response = await axios.get(`${JOBS_API}?payment=${type}&company=${company}&term=${term}`);
     return response.data;
 }
 

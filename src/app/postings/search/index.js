@@ -25,7 +25,7 @@ const Postings = () => {
                     <div className="col">
                         <nav aria-label="breadcrumb" className="bg-light rounded-3 p-3 mb-4">
                         <ol className="breadcrumb mb-0">
-                            <li className="breadcrumb-item"><Link to={`../${userDetails.role.toLowerCase()}`}>Home</Link></li>
+                            <li className="breadcrumb-item"><Link to={`/app/${userDetails.role.toLowerCase()}`}>Home</Link></li>
                             <li className="breadcrumb-item active" aria-current="page">Postings</li>
                         </ol>
                         </nav>

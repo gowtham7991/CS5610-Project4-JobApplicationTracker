@@ -1,3 +1,14 @@
 .wd-companycard-container img {
     height: 150px;
 }
+
+.wd-companycard-container {
+    height: 100%;
+    position: relative;
+}
+
+.wd-postings-link {
+    position: absolute;
+    bottom: 20px;
+}
+

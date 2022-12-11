@@ -9,11 +9,13 @@ const CompanyCard = (companyData) => {
     return(
         <div className="card wd-companycard-container">
             <img className="card-img-top" src={logo} alt="Card image cap"/>
-            <div className="card-body">
+            <div className="card-body py-4">
                 <h5 className="card-title">{data.name}</h5>
                 <p className="card-text">{data.overview}</p>
                 <p className="card-text">{`Jobs Posted: ${data.jobsPosted.length}`}</p>
-                <Link to={`../postings/company/${data._id}`} className="btn btn-primary">Check Postings</Link>
+                <div className="wd-postings-link">
+                    <Link to={`../postings/company/${data._id}`}>Check Postings</Link>
+                </div>
             </div>
         </div>
     );

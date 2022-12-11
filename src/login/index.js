@@ -25,7 +25,7 @@ const LoginPage = () => {
 
         dispatch(loginThunk(loginDetails))
     }
-
+    
     if(isLoggedIn) {
         if (userDetails.role === "STUDENT") {
             return (<Navigate to={'/app/student'}/>)
@@ -53,6 +53,9 @@ const LoginPage = () => {
                         <span className="d-flex justify-content-between">
                             <hr className="w-46 d-inline-block"/> or <hr className="d-inline-block"/>
                         </span>
+                        <div className={`d-${isLoggedIn ? "" : "none"} alert alert-success`} role="alert">
+                            You have been logged in!
+                        </div>
                         <form onSubmit={(e) => loginHandler(e)}>
                             <div class="form-group mt-4">
                                 <label for="exampleInputEmail1" className="form-label"><b>Email address</b></label>
