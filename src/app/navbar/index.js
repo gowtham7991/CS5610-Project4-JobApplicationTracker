@@ -10,7 +10,7 @@ const NavBar = () => {
     const isUserLoggedIn = true;
     
     return (
-        <div >
+        <div className="wd-nav">
             <div className="wd-navbar">
             {/*<div className="d-flex justify-content-between wd-main-navbar bg-light shadow p-2">*/}
                 <div>

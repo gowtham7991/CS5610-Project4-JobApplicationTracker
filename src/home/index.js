@@ -32,8 +32,8 @@ const App = () => {
                 </div>
             </div>
             <div className = "wd-main-content mt-5 mx-auto p-5 container">
-                <div className = "d-flex">
-                    <div className="">
+                <div className = "row">
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                         <div className="candidate__hero-text-wrapper">
                             <h1 className="heading1">
                                 Finding jobs has never been easier.
@@ -47,8 +47,9 @@ const App = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col col-6 col-m-12">
-                        <img src={jobsImage}></img>
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 imgbox">
+                    {/*<div className="col col-6 col-m-12">*/}
+                        <img src={jobsImage} className="center-fit"></img>
                     </div>
                 </div>
             </div>
