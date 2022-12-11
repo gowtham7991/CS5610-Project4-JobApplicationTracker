@@ -43,7 +43,7 @@ const RecuiterRegisterPage = () => {
     return (
         <div>
             <div className="row wd-login-page m-0">
-                <div className="col-7 wd-form-container p-0">
+                <div className="col-xl-7 col-12 wd-form-container p-0">
                 <div className="wd-logo-container p-2">
                     <Link to="/">
                             <img src={logo} style={{width:"10rem", height:"3rem"}}/>
@@ -128,7 +128,7 @@ const RecuiterRegisterPage = () => {
                     </div>
                 </div>
                 
-                <div className="col wd-bgimage p-0">
+                <div className="col wd-bgimage d-none d-xl-block p-0">
                     <img src={bgImage} width="100%" height="100%"/>
                 </div>
             </div>
