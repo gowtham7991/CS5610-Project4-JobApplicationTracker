@@ -11,11 +11,10 @@ const ApplicantItem = ({data}) => {
                     <img src={logo} className="rounded" style={{width:"100%", height:"100%"}}/>
                 </div>
                 <div className="col">
-                    <p className="h6">Student Name</p>
-                    <p>Stream</p>
-                    <small className="text-muted">{`Application submitted ${'Oct 14, 2022'}, ${'9:35'}`}</small>
+                    <p className="h6">{data.studentName}</p>
+                    <small className="text-muted">{`Application submitted ${data.submissionTime}`}</small>
                     <div>
-                        <Link to="/jobs/1111">View profile</Link>
+                        <Link to={`/app/student/profile/${data.user}`}>View profile</Link>
                     </div>
                 </div>
             </div>

@@ -11,29 +11,37 @@ const EditProfile = () => {
     const data = useSelector(state => state.profileData).profileDetails
     const userDetails = useSelector(state => state.loginData).userDetails
     const isLoading = useSelector(state => state.profileData).isLoading
-    const profileData = data.profile
-    const skillList = [{ label: "Grapes 🍇", value: "grapes" },
-        { label: "Mango 🥭", value: "mango" },
-        { label: "Strawberry 🍓", value: "strawberry", disabled: true },];
+    const skillList = [
+        { label: "Java", value: "Java" },
+        { label: "Python", value: "Python" },
+        { label: "C", value: "C++" },
+        { label: "C", value: "C" },
+        { label: "JavaScript", value: "JavaScript" },
+        { label: "AWS", value: "AWS" },
+        { label: "Linux", value: "Linux" },
+        { label: "Docker", value: "Docker" },
+        { label: "GCP", value: "GCP" },
+        { label: "Django", value: "Django" },
+      ];
     
     const dispatch = useDispatch()
     const params = useParams();
-    const uid = params.hasOwnProperty("uid") ? params.uid : userDetails.uid
+    const uid = params.hasOwnProperty("uid") ? params.uid : userDetails._id
     useEffect(() => {dispatch(findProfileByIdThunk(uid))}, [])
     
     const [skills, setSkills] = useState([]);
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [aboutMe, setAboutMe] = useState([]);
-    const [mobileNumber, setMobileNumber] = useState([]);
-    const [graduationDate, setGraduationDate] = useState([]);
-    const [address, setAddress] = useState([]);
-    const [educationLevel, setEducationLevel] = useState([]);
-    const [major, setMajor] = useState([]);
-    const [GPA, setGPA] = useState([]);
-    const [linkedInURL, setLikedinURL] = useState([]);
-    const [githubURL, setGithubURL] = useState([]);
-    const [website, setWesbite] = useState([]);
+    const [firstName, setFirstName] = useState(userDetails.name.firstName);
+    const [lastName, setLastName] = useState(userDetails.name.lastName);
+    const [aboutMe, setAboutMe] = useState(userDetails.profile.aboutMe);
+    const [mobileNumber, setMobileNumber] = useState(userDetails.profile.mobileNumber);
+    const [address, setAddress] = useState(userDetails.profile.address);
+    const [educationLevel, setEducationLevel] = useState(userDetails.profile.educationLevel);
+    const [major, setMajor] = useState(userDetails.profile.major);
+    const [GPA, setGPA] = useState(userDetails.profile.GPA);
+    const [linkedInURL, setLikedinURL] = useState(userDetails.profile.linkedInURL);
+    const [githubURL, setGithubURL] = useState(userDetails.profile.githubURL);
+    const [website, setWesbite] = useState(userDetails.profile.website);
+
     const saveProfileHandler = () => {
         const skillsSelected = skills.map(skill => skill.value)
         const profileDetails = {   

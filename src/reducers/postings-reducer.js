@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { findAllPostingsThunk, findPostingsByCompanyThunk } from "../services/postings/postings-thunks";
+import { findAllPostingsThunk, findPostingsByCompanyThunk, deletePostingThunk } from "../services/postings/postings-thunks";
 
 const initialState = {
     isLoading: true,
-    postings: [1,2,3]
+    postings: []
 }
 
 const postingSlice = createSlice({
@@ -37,7 +37,13 @@ const postingSlice = createSlice({
         [findPostingsByCompanyThunk.rejected]:
         (state) => {
             state.isLoading = true
-        }
+        },
+        [deletePostingThunk.fulfilled] :
+        (state, { payload }) => {
+        state.isLoading = false
+        state.postings = state.postings
+          .filter(job => job._id !== payload)
+      },
     }
 })
 

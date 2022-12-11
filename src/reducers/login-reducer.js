@@ -3,7 +3,6 @@ import { loginThunk } from "../services/login/login-thunks";
 
 const initialState = {
     userDetails: {
-        uid: "",
         companyId: "",
         email: "",
         password: "",

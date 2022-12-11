@@ -2,7 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { findInternalJobsThunk, findExternalJobsThunk, findJobByIdThunk, createJobThunk, deleteJobThunk} from "../services/jobs/jobs-thunks";
 
 const initialState = {
-    isLoading: true,
+    isInternalJobListLoading: true,
+    isExternalJobListLoading: true,
+    isJobDetailLoading: true,
     internalJobs: [],
     externalJobs: [],
     jobDetails: {}
@@ -14,46 +16,57 @@ const JobsSlice = createSlice({
     extraReducers: {
         [findInternalJobsThunk.pending]:
             (state) => {
-                state.isLoading = true
+                state.isInternalJobListLoading = true
                 state.internalJobs = []
         },
         [findInternalJobsThunk.fulfilled]:
         (state, {payload}) => {
-            state.isLoading = false
+            state.isInternalJobListLoading = false
             state.internalJobs = payload
         },
         [findInternalJobsThunk.rejected]:
         (state) => {
-            state.isLoading = true
+            state.isInternalJobListLoading = true
             state.internalJobs = []
         },
         [findExternalJobsThunk.pending]:
         (state) => {
-            state.isLoading = true
+            state.isExternalJobListLoading = true
             state.externalJobs = []
         },
         [findExternalJobsThunk.fulfilled]:
         (state, {payload}) => {
-            state.isLoading = false
+            state.isExternalJobListLoading = false
             state.externalJobs = payload
         },
         [findExternalJobsThunk.rejected]:
         (state) => {
-            state.isLoading = true
+            state.isExternalJobListLoading = true
             state.externalJobs = []
+        },
+        [findJobByIdThunk.pending]:
+            (state) => {
+                state.isJobDetailLoading = true
+                state.jobDetails = {}
         },
         [findJobByIdThunk.fulfilled]:
         (state, {payload}) => {
+            state.isJobDetailLoading = false
             state.jobDetails = payload
+        },
+        [findJobByIdThunk.rejected]:
+        (state) => {
+            state.isJobDetailLoading = true
+            state.jobDetails = {}
         },
         [createJobThunk.fulfilled]:
         (state, {payload}) => {
-            state.isLoading = false
+            state.isInternalJobListLoading = false
             state.internalJobs.push(payload)
         },
         [deleteJobThunk.fulfilled] :
         (state, { payload }) => {
-        state.isLoading = false
+        state.isInternalJobListLoading = false
         state.internalJobs = state.internalJobs
           .filter(job => job._id !== payload)
       },

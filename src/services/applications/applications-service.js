@@ -3,7 +3,7 @@ const API_BASE = "https://jobapplicationtracker-server.onrender.com";
 const APPLICATIONS_API = `${API_BASE}/applications`;
 
 export const findApplications = async (uid) => {
-    const response = await axios.get(`${APPLICATIONS_API}/student/${uid}`)
+    const response = await axios.get(`${APPLICATIONS_API}/${uid}`)
     return response.data
 }
 

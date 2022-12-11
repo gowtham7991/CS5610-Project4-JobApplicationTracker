@@ -4,6 +4,7 @@ import "./ApplicationItem.css"
 import { Link } from "react-router-dom";
 
 const ApplicationItem = ({data}) => {
+
     return(
         <li className="wd-application-item list-group-item border">
             <div className="row">
@@ -15,7 +16,7 @@ const ApplicationItem = ({data}) => {
                     <p>Company Name</p>
                     <small className="text-muted">{`Application submitted ${'Oct 14, 2022'}, ${'9:35'}`}</small>
                     <div>
-                        <Link to="/app/jobs/detail/1111">View job</Link>
+                        <Link to={`/app/jobs/detail/${data.data.job}`}>View job</Link>
                     </div>
                 </div>
                 <div className="col-2 d-flex justify-content-center align-items-center">

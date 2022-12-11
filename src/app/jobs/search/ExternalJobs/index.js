@@ -7,7 +7,7 @@ import { findExternalJobsThunk } from "../../../../services/jobs/jobs-thunks";
 
 const JobList = () => {
     const jobs = useSelector(state => state.jobsData).externalJobs
-    const isLoading = useSelector(state => state.jobsData).isLoading
+    const isLoading = useSelector(state => state.jobsData).isInternalJobListLoading
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(findExternalJobsThunk())
@@ -15,7 +15,10 @@ const JobList = () => {
 
     return(
         <div className="container">
-            <ul class="nav nav-tabs">
+            {
+                !isLoading &&
+                <div>
+                    <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <Link to={`/app/jobs/`} className="nav-link" aria-current="page">Internal Jobs</Link>
                 </li>
@@ -79,6 +82,8 @@ const JobList = () => {
                 }
                 </div>
             </div>
+                </div>
+            }
         </div>
         
     );

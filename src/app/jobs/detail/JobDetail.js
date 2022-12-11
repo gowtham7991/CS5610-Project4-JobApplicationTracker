@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./JobDetail.css"
 import logo from "../../../assets/logo.png"
 import { Link } from "react-router-dom";
@@ -11,23 +11,30 @@ const JobDetail = () => {
     const dispatch = useDispatch()
     const userDetails = useSelector(state => state.loginData).userDetails
     const jobDetails = useSelector(state => state.jobsData).jobDetails
+    const isLoading = useSelector(state => state.jobsData).isJobDetailLoading
     const urlParams = useParams();
+    const navigate = useNavigate()
     const jobId = urlParams.jobId;
-
     useEffect(() => {
         dispatch(findJobByIdThunk(jobId))
     }, [])
 
     const applyHandler = () => {
         const applicationDetails = {
-            uid: userDetails.uid
+            user: userDetails.uid,
+            job: jobId
         }
         dispatch(createApplicationThunk(applicationDetails))
+        navigate("./")
     }
     console.log(jobDetails)
+    console.log(isLoading)
     return(
         <div className="container">
-            <nav aria-label="breadcrumb">
+            {
+                !isLoading && 
+                <div>
+                    <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><Link to="/app/student">Home</Link></li>
                     <li class="breadcrumb-item"><Link to="/app/jobs/">Jobs</Link></li>
@@ -157,6 +164,8 @@ const JobDetail = () => {
             </div>
             </div>
            
+                </div>
+            }
         </div>
     );
 }

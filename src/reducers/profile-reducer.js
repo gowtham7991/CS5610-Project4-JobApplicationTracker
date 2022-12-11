@@ -3,7 +3,29 @@ import { saveProfileThunk, findProfileByIdThunk } from "../services/profile/prof
 
 const initialState = {
     profileDetails : {
-        profile: {}
+        email: "",
+        password: "",
+        name: {firstName: "", lastName: ""},
+        dob: "String",
+        role: "",
+        profile:{
+            aboutMe: "",
+            linkedInURL: "",
+            githubURL: "",
+            workExperience: "",
+            skills: [],
+            image: "",
+            graduationDate: "",
+            website: "",
+            companyName: "",
+            position: "",
+            mobileNumber: "",
+            department: "",
+            address: "",
+            educationLevel: "",
+            major: "",
+            GPA: ""
+        }
     },
     isLoading: true
 }

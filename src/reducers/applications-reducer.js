@@ -3,7 +3,7 @@ import { findApplicationsThunk, withdrawApplicationThunk, createApplicationThunk
 
 const initialState = {
     isLoading: true,
-    applications: [1,2,4]
+    applications: []
 }
 
 const applicationsSlice = createSlice({

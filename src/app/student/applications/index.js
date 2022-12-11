@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ApplicationItem from "./ApplicationItem";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { findApplicationsThunk } from "../../../services/applications/applications-thunk";
 const ApplicationList = () => {
-    const applications = [{"_id":1, "av":"aaa"}, {"_id":2, "av":"bbb"}];
+    const userDetails = useSelector(state => state.loginData).userDetails
+    const applications = useSelector(state => state.applicationsData).applications
+    const isLoading = useSelector(state => state.applicationData).isLoading
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(findApplicationsThunk(userDetails._id))
+    }, [])
+
     return(
         <div className="container">
-            <nav aria-label="breadcrumb">
+            {
+                !isLoading &&
+                <div>
+                    <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><Link to="/app/student/">Home</Link></li>
                     <li class="breadcrumb-item active" aria-current="page">Applications</li>
@@ -18,6 +31,8 @@ const ApplicationList = () => {
                     )
             }
         </ul>
+                </div>
+            }
         </div>
     );
 }

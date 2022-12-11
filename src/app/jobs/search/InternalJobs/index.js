@@ -7,8 +7,9 @@ import { findInternalJobsThunk } from "../../../../services/jobs/jobs-thunks";
 import { useEffect } from "react";
 
 const JobList = () => {
+    const userDetails = useSelector(state => state.loginData).userDetails
     const jobs = useSelector(state => state.jobsData).internalJobs
-    const isLoading = useSelector(state => state.jobsData).isLoading
+    const isLoading = useSelector(state => state.jobsData).isInternalJobListLoading
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(findInternalJobsThunk())
@@ -16,7 +17,20 @@ const JobList = () => {
 
     return(
         <div className="container">
-            <ul class="nav nav-tabs">
+           {
+            !isLoading &&
+            <div>
+                <div className="row">
+                    <div className="col">
+                        <nav aria-label="breadcrumb" className="bg-light rounded-3 p-3 mb-4">
+                        <ol className="breadcrumb mb-0">
+                            <li className="breadcrumb-item"><Link to={`../${userDetails.role.toLowerCase()}`}>Home</Link></li>
+                            <li className="breadcrumb-item active" aria-current="page">Postings</li>
+                        </ol>
+                        </nav>
+                    </div>
+                </div>
+                 <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <Link to="" className="nav-link active" aria-current="page">Internal Jobs</Link>
                 </li>
@@ -80,6 +94,8 @@ const JobList = () => {
                 }
                 </div>
             </div>
+            </div>
+           }
         </div>
         
     );

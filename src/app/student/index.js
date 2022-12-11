@@ -4,8 +4,10 @@ import Home from "./home"
 import ProfileComponent from "./profile"
 import ApplicationsComponent from "./applications"
 import EditProfileComponent from "./edit-profile";
+import { useSelector } from "react-redux";
 
 const StudentApp = () => {
+    const isLoggedIn = useSelector(state => state.loginData).isLoggedIn
     return (
         <Routes>
             <Route path="" element={<Home/>}/>

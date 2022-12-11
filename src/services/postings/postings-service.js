@@ -12,3 +12,8 @@ export const findPostingsByCompany = async (companyId) => {
     console.log(response.data)
     return response.data;
 }
+
+export const deletePosting = async (jobId) => {
+    const response = await axios.delete(`${API_BASE}/jobs/${jobId}`);
+    return jobId
+}

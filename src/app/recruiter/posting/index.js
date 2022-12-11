@@ -5,12 +5,21 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createJobThunk } from "../../../services/jobs/jobs-thunks";
+import { useSelector } from "react-redux";
 
 const PostingForm = () => {
+    const userDetails = useSelector(state => state.loginData).userDetails
     const skillsList = [
-        { label: "Grapes 🍇", value: "grapes" },
-        { label: "Mango 🥭", value: "mango" },
-        { label: "Strawberry 🍓", value: "strawberry", disabled: true },
+        { label: "Java", value: "Java" },
+        { label: "Python", value: "Python" },
+        { label: "C", value: "C++" },
+        { label: "C", value: "C" },
+        { label: "JavaScript", value: "JavaScript" },
+        { label: "AWS", value: "AWS" },
+        { label: "Linux", value: "Linux" },
+        { label: "Docker", value: "Docker" },
+        { label: "GCP", value: "GCP" },
+        { label: "Django", value: "Django" },
       ];
       
     const [title, setTitle] = useState("");
@@ -28,27 +37,28 @@ const PostingForm = () => {
     
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    console.log(userDetails)
     const createJobHandler = (e) => {
         e.preventDefault();
         const skillsSelected = skills.map(s => s.value)
         const jobDetails = {
-            title,
-            description,
-            term,
-            positionType,
-            duration,
-            location,
-            paymentType,
-            pay,
-            deadlineDate,
-            startDate,
-            openings,
-            skills: skillsSelected
+            positionName: title,
+            description: description,
+            term: term,
+            positionType: positionType,
+            numOpenings: openings,
+            location: location,
+            paymentType: paymentType,
+            deadlineToApply: deadlineDate,
+            company: userDetails.profile.companyName,
+            skillsReqd: skillsSelected,
+            startDate: startDate,
+            jobLength: duration,
+            pay: pay,
         }
         console.log(jobDetails)
         dispatch(createJobThunk(jobDetails))
-        navigate("../")
+        navigate("../../postings")
     }
     return(
         <div className="wd-job-posting container rounded bg-white mt-5">
@@ -77,9 +87,10 @@ const PostingForm = () => {
                     <label for="term" className="form-label"><b>Term</b></label>
                     <select className="form-control" id="term"  value={term} onChange={(e) => setTerm(e.target.value)}>
                         <option selected>select</option>
-                        <option>Spring 23</option>
-                        <option>Summer 23</option>
-                        <option>Fall 23</option>
+                        <option>Spring</option>
+                        <option>Summer</option>
+                        <option>Fall</option>
+                        <option>Winter</option>
                     </select>
                 </div>   
 
@@ -87,15 +98,15 @@ const PostingForm = () => {
                     <label for="position-type" className="form-label"><b>Position Type</b></label>
                     <select className="form-control" id="position-type"  value={positionType} onChange={(e) => setPositionType(e.target.value)}>
                         <option selected>select</option>
-                        <option>Co-op</option>
+                        <option>Coop</option>
                         <option>Internship</option>
-                        <option>Fulltime</option>
+                        <option>FullTime</option>
                     </select>
                 </div>
                 
                 <div className="form-group mb-4">
                     <label for="duration" className="form-label"><b>Duration</b></label>
-                    <input type="text" className="form-control" id="duration" 
+                    <input type="number" className="form-control" id="duration" 
                         placeholder="Enter job title"  value={duration} onChange={(e) => setDuration(e.target.value)}/>
                 </div>
 
@@ -121,7 +132,7 @@ const PostingForm = () => {
                     <label for="amount" className="form-label"><b>Pay</b></label>
                     <div className="d-flex">
                         <span className="input-group-text">$</span>
-                        <input type="text" className="form-control" id="amount" 
+                        <input type="number" className="form-control" id="amount" 
                         aria-label="Amount (to the nearest dollar)"  value={pay} onChange={(e) => setPay(e.target.value)}/>
                         <span className="input-group-text">.00</span>
                     </div>
@@ -143,7 +154,7 @@ const PostingForm = () => {
 
                 <div className="form-group mb-4">
                     <label for="numberofopenings" className="form-label"><b>Number of openings</b></label>
-                    <input type="text" className="form-control" id="numberofopenings" 
+                    <input type="number" className="form-control" id="numberofopenings" 
                         placeholder=""  value={openings} onChange={(e) => setOpenings(e.target.value)}/>
                 </div>
 

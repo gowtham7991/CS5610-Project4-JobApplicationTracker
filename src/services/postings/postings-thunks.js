@@ -9,3 +9,9 @@ export const findAllPostingsThunk = createAsyncThunk(
 export const findPostingsByCompanyThunk = createAsyncThunk(
     'postings/company', async (companyId) => await service.findPostingsByCompany(companyId)
 )
+
+export const deletePostingThunk = createAsyncThunk(
+  'jobs/deleteJob',
+  async (jobId) =>
+    await service.deletePosting(jobId)
+)

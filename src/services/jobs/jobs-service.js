@@ -18,6 +18,7 @@ export const findJobById = async (jobId) => {
 }
 
 export const createJob = async (jobDetails) => {
+    console.log(jobDetails)
     const response = await axios.post(`${JOBS_API}/create`, jobDetails);
     return response.data
 }

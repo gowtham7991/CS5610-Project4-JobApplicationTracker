@@ -18,7 +18,6 @@ const App = () => {
             <NavBar/>
             <div className="m-2">
                 <Routes>
-                    {/* <Route path="" element={userDetails.role === "student" ? navigate("/app/student") : navigate("/app/recruiter")} /> */}
                     <Route path="student/*" element={<StudentComponent/>}/>
                     <Route path="admin/*" element={<AdminComponent/>}/>
                     <Route path="recruiter/*" element={<RecruiterComponent/>}/>
