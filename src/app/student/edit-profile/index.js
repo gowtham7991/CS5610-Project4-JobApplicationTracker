@@ -49,7 +49,7 @@ const EditProfile = () => {
                     "firstName": firstName,
                     "lastName": lastName 
                 },
-                "uid" : userDetails.uid,
+                "uid" : userDetails._id,
                 "profile": {
                 "aboutMe": aboutMe,
                 "linkedInURL": linkedInURL,

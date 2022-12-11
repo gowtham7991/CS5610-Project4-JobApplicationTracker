@@ -21,7 +21,7 @@ const JobDetail = () => {
 
     const applyHandler = () => {
         const applicationDetails = {
-            user: userDetails.uid,
+            user: userDetails._id,
             job: jobId
         }
         dispatch(createApplicationThunk(applicationDetails))

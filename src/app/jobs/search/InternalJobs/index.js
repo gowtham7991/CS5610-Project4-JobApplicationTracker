@@ -17,20 +17,32 @@ const JobList = () => {
     const dispatch = useDispatch();
     
     useEffect(() => {
-        const params = {
-            company,
-            term,
-            paymentType
+        const params = {}
+        if(company !== "All") {
+            params.company = company
+        }
+        if(term !== "All") {
+            params.term = term
+        }
+        if(paymentType !== "All") {
+            params.paymentType = paymentType
         }
         dispatch(findInternalJobsThunk(params))
     }, [])
     
     const searchClickHandler = () => {
-        const params = {
-            company,
-            term,
-            paymentType
+        const params = {}
+
+        if(company !== "All") {
+            params.company = company
         }
+        if(term !== "All") {
+            params.term = term
+        }
+        if(paymentType !== "All") {
+            params.paymentType = paymentType
+        }
+
         dispatch(findInternalJobsThunk(params));
     }
 

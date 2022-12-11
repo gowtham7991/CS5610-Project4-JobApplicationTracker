@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../../assets/logo.png"
 import { Link } from "react-router-dom";
 import "./ApplicantItem.css"
 
@@ -8,7 +7,7 @@ const ApplicantItem = ({data}) => {
         <li className="wd-application-item list-group-item border">
             <div className="row">
                 <div className="col-1 p-3">
-                    <img src={logo} className="rounded" style={{width:"100%", height:"100%"}}/>
+                    <img src={data.logo} className="rounded" style={{width:"100%", height:"100%"}}/>
                 </div>
                 <div className="col">
                     <p className="h6">{data.studentName}</p>

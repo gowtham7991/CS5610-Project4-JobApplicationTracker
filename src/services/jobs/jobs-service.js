@@ -3,11 +3,26 @@ const API_BASE = "https://jobapplicationtracker-server.onrender.com";
 const JOBS_API = `${API_BASE}/jobs`;
 
 export const findInternalJobs = async (params) => {
+    var api = JOBS_API + "?"
     console.log(params)
-    const type = params.paymentType
-    const company = params.company
-    const term = params.term
-    const response = await axios.get(`${JOBS_API}?payment=${type}&company=${company}&term=${term}`);
+    if(params.hasOwnProperty("paymentType")) {
+        console.log("type")
+
+        api = api + "payment=" + params.paymentType + "&"
+    }
+    if(params.hasOwnProperty("company")) {
+        console.log("company")
+        api = api + "company=" + params.company + "&"
+    }
+    if(params.hasOwnProperty("term")) {
+        console.log("term")
+
+        api = api + "term=" + params.term
+    }
+
+    api = api.charAt(api.length - 1) === '&' ? api.slice(0, -1) : api
+    console.log(api)
+    const response = await axios.get(api);
     return response.data;
 }
 

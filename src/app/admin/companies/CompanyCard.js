@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../../assets/google.jpg"
 import "./CompanyCard.css"
 import { Link } from "react-router-dom";
 
@@ -8,7 +7,7 @@ const CompanyCard = (companyData) => {
 
     return(
         <div className="card wd-companycard-container">
-            <img className="card-img-top" src={logo} alt="Card image cap"/>
+            <img className="card-img-top" src={data.logo} alt="Card image cap"/>
             <div className="card-body py-4">
                 <h5 className="card-title">{data.name}</h5>
                 <p className="card-text">{data.overview}</p>

@@ -6,7 +6,7 @@ import { findApplicationsThunk } from "../../../services/applications/applicatio
 const ApplicationList = () => {
     const userDetails = useSelector(state => state.loginData).userDetails
     const applications = useSelector(state => state.applicationsData).applications
-    const isLoading = useSelector(state => state.applicationData).isLoading
+    const isLoading = useSelector(state => state.applicationsData).isLoading
 
     const dispatch = useDispatch()
     useEffect(() => {

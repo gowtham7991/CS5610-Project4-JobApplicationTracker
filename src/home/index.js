@@ -32,9 +32,9 @@ const App = () => {
                 </div>
             </div>
             <div className = "wd-main-content mt-5 mx-auto p-5 container">
-                <div className = "d-flex">
-                    <div className="">
-                        <div className="candidate__hero-text-wrapper">
+                <div className = "row">
+                    <div className="col">
+                        <div className="">
                             <h1 className="heading1">
                                 Finding jobs has never been easier.
                             </h1>
@@ -47,7 +47,7 @@ const App = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col col-6 col-m-12">
+                    <div className="col">
                         <img src={jobsImage}></img>
                     </div>
                 </div>

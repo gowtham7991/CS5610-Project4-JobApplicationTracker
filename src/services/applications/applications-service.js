@@ -14,10 +14,11 @@ export const findApplicationsByJobId = async (uid) => {
 
 export const createApplication = async (applictionDetails) => {
     const response = await axios.post(APPLICATIONS_API, applictionDetails)
-    return response.data
+    console.log(applictionDetails)
+    return applictionDetails
 }
 
 export const withdrawApplication = async (applicationId) => {
     const response = await axios.delete(`${APPLICATIONS_API}/${applicationId}`)
-    return response.data
+    return applicationId
 }

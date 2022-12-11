@@ -16,7 +16,7 @@ const PostSummaryCard = (post) => {
         <div class="card">
             <div class="d-flex algin-center card-header p-3">
                 <div className="wd-company-logo me-2">
-                    <img src={`../../../${data.company}.png`}/>
+                    <img src={data.logo}/>
                 </div>
                 <div className="wd-company">
                     <div className="wd-name"><b>{data.company}</b></div>
