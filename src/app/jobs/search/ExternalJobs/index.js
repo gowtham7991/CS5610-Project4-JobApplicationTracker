@@ -7,6 +7,7 @@ import { findExternalJobsThunk } from "../../../../services/jobs/jobs-thunks";
 
 const JobList = () => {
     const userDetails = useSelector(state => state.loginData).userDetails
+    const isLoggedIn = useSelector(state => state.loginData).isLoggedIn
     const [keyword, setKeyword] = useState('');
     const [location, setLocation] = useState('');
     const [country, setCountry] = useState('US');
@@ -40,7 +41,7 @@ const JobList = () => {
                     <div className="col">
                         <nav aria-label="breadcrumb" className="bg-light rounded-3 p-3 mb-4">
                         <ol className="breadcrumb mb-0">
-                            <li className="breadcrumb-item"><Link to={`/app/${userDetails.role.toLowerCase()}`}>Home</Link></li>
+                            <li className="breadcrumb-item"><Link to={isLoggedIn ? `/app/${userDetails.role.toLowerCase()}` : "/"}>Home</Link></li>
                             <li className="breadcrumb-item active" aria-current="page">Jobs</li>
                         </ol>
                         </nav>
