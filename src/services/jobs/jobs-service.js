@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_BASE = process.env.SERVER_URL;
+const API_BASE = process.env.REACT_APP_API_BASE;
 const JOBS_API = `${API_BASE}/jobs`;
 
 export const findInternalJobs = async (params) => {
