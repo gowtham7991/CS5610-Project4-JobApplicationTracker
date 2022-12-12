@@ -47,7 +47,7 @@ const applicationsSlice = createSlice({
         },
         [createApplicationThunk.fulfilled]:
             (state, {payload}) => {
-            console.log(payload)
+            console.log("in reducer" + payload)
             state.isLoading = false
             state.applications.push(payload)
         }

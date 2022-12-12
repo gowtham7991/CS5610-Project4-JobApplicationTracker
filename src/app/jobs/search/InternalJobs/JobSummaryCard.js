@@ -12,7 +12,7 @@ const JobSummaryCard = (job) => {
         <div class="card">
             <div class="d-flex algin-center card-header p-3">
                 <div className="wd-company-logo me-2">
-                    <img src={`https://github.com/gowtham7991/CS5610-Project4-JobApplicationTracker/blob/main/src/assets/logos/${data.company}.png?raw=true`}/>
+                    <img src={`https://github.com/gowtham7991/CS5610-Project4-JobApplicationTracker/blob/main/src/assets/logos/${data.company.toLowerCase()}.png?raw=true`}/>
                 </div>
                 <div className="wd-company">
                     <div className="wd-name"><b>{data.company}</b></div>

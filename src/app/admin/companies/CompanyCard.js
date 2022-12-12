@@ -7,7 +7,10 @@ const CompanyCard = (companyData) => {
 
     return(
         <div className="card wd-companycard-container">
-            <img className="card-img-top" src={data.logo} alt="Card image cap"/>
+            <div className="px-3 py-2">
+                <img className="card-img-top" src={`https://github.com/gowtham7991/CS5610-Project4-JobApplicationTracker/blob/main/src/assets/logos/${data.logo}?raw=true`} alt="Card image cap"/>
+
+            </div>
             <div className="card-body py-4">
                 <h5 className="card-title">{data.name}</h5>
                 <p className="card-text">{data.overview}</p>

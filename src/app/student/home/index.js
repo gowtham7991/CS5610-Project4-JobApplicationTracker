@@ -54,32 +54,30 @@ const Home = () => {
                     <div className="col-4 p-2">
                         <div className="card" >
                             <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" className="card-link">Card link</a>
-                                <a href="#" className="card-link">Another link</a>
+                                <h5 className="card-title">Jane Smith</h5>
+                                <h6 className="card-subtitle mb-2 text-muted">Computer Science</h6>
+                                <p className="card-text">I am pursuing MSCS at Northeastern University, Boston</p>
+                                <a href="http://localhost:3000/app/student/profile/63967c29273c3e77ce5461e3" className="card-link" target="_blank">view profile</a>
                             </div>
                         </div>
                     </div>
                     <div className="col-4 p-2">
                         <div className="card" >
                             <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" className="card-link">Card link</a>
-                                <a href="#" className="card-link">Another link</a>
+                                <h5 className="card-title">Riya Batra</h5>
+                                <h6 className="card-subtitle mb-2 text-muted">Data Science</h6>
+                                <p className="card-text">I am pursuing Data Science at Northeastern University, Boston</p>
+                                <a href="http://localhost:3000/app/student/profile/6394c18d273c3e77cebf9a08" className="card-link" target="_blank">view profile</a>
                             </div>
                         </div>
-                    </div><div className="col-4 p-2">
+                    </div>
+                    <div className="col-4 p-2">
                         <div className="card" >
                             <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" className="card-link">Card link</a>
-                                <a href="#" className="card-link">Another link</a>
+                                <h5 className="card-title">Abhisha Daine</h5>
+                                <h6 className="card-subtitle mb-2 text-muted">Artifical Intelligence</h6>
+                                <p className="card-text">I am pursuing MSAI at Northeastern University, Boston</p>
+                                <a href="http://localhost:3000/app/student/profile/6394c1ec273c3e77cec09fcd" className="card-link" target="_blank">view profile</a>
                             </div>
                         </div>
                     </div>

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createApplicationThunk } from "../../../services/applications/applications-thunk";
 import { findJobByIdThunk } from "../../../services/jobs/jobs-thunks";
+import { findApplicationsByJobId } from "../../../services/applications/applications-service";
 
 const JobDetail = () => {
     const dispatch = useDispatch()
@@ -15,6 +16,7 @@ const JobDetail = () => {
     const urlParams = useParams();
     const navigate = useNavigate()
     const jobId = urlParams.jobId;
+    
     useEffect(() => {
         dispatch(findJobByIdThunk(jobId))
     }, [])
@@ -24,9 +26,11 @@ const JobDetail = () => {
             user: userDetails._id,
             job: jobId
         }
+        navigate(`/app/${userDetails.role.toLowerCase()}`)
         dispatch(createApplicationThunk(applicationDetails))
-        navigate("./")
+        // dispatch(findApplicationsByJobId(userDetails._id))        
     }
+
     console.log(jobDetails)
     console.log(isLoading)
     return(
@@ -44,7 +48,7 @@ const JobDetail = () => {
             <div className="wd-jobdetail-container">
             <div className="d-flex wd-job-header border p-3">
                 <div className="col-1 wd-company-logo">
-                    <img src={logo}/>
+                    <img src={`https://github.com/gowtham7991/CS5610-Project4-JobApplicationTracker/blob/main/src/assets/logos/${jobDetails.company.toLowerCase()}.png?raw=true`}/>
                 </div>
                 <div className="col-10 wd-section-header">
                     <h1>{jobDetails.positionName}</h1>

@@ -85,11 +85,14 @@ const JobList = () => {
             
             {jobs && <div className="border">
                 <div className="grid-container">
-                {jobs.map(job =>
-                    <div className="grid-item">
-                        <Job job = {job}/>
-                    </div>)
-                }
+                    {jobs.length > 0 && jobs.map(job =>
+                        <div className="grid-item">
+                            <Job job = {job}/>
+                        </div>)
+                    }
+                    {
+                        jobs.length === 0 && <p>No jobs found</p>
+                    }
                 </div>
             </div>}
                 </div>

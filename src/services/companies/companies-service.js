@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_BASE = "https://jobapplicationtracker-server.onrender.com";
+const API_BASE = "http://localhost:4000";
 const COMPANY_API = `${API_BASE}/companies`;
 
 export const findAllCompanies = async () => {

@@ -32,10 +32,13 @@ const Postings = () => {
                     </div>
                 </div>
                 <div className="grid-container">
-                    {posts.map(posting => 
+                    {posts.length > 0 && posts.map(posting => 
                         <div className="grid-item">
                             <Post data={posting}/>
                         </div>)
+                    }
+                    {
+                        posts.length === 0 && <p>No postings found</p>
                     }
                 </div>
             </div>

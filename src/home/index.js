@@ -65,7 +65,7 @@ const App = () => {
             <div className="p-5">
                 <p className="h1 text-center">Today's top comapnies are hiring.</p>
                 <p className="text-muted text-center h6">We partner with top US companies from early-stage startups to Fortune 500 companies to bring the best jobs in tech and finance to you.</p>
-                <p className="h6 text-center"><Link>Search Jobs</Link></p>
+                <p className="h6 text-center"><Link to="/app/jobs">Search Jobs</Link></p>
             </div>
             <div style={{backgroundColor: "#EBF4F6", height:"150px"}} className="d-flex justify-content-between p-5">
                 <div>

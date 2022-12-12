@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_BASE = "https://jobapplicationtracker-server.onrender.com";
+const API_BASE = "http://localhost:4000";
 const APPLICATIONS_API = `${API_BASE}/applications`;
 
 export const findApplications = async (uid) => {
@@ -14,8 +14,8 @@ export const findApplicationsByJobId = async (uid) => {
 
 export const createApplication = async (applictionDetails) => {
     const response = await axios.post(APPLICATIONS_API, applictionDetails)
-    console.log(applictionDetails)
-    return applictionDetails
+    console.log("------" + response.data)
+    return response.data
 }
 
 export const withdrawApplication = async (applicationId) => {

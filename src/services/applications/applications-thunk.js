@@ -10,9 +10,8 @@ export const findApplicationsByJobIdThunk = createAsyncThunk(
 )
 
 export const createApplicationThunk = createAsyncThunk(
-    'applications/create', async (applicationDetails) => {
-        await service.createApplication(applicationDetails)
-    }
+    'applications/create', async (applicationDetails) => await service.createApplication(applicationDetails)
+    
 )
 
 export const withdrawApplicationThunk = createAsyncThunk(

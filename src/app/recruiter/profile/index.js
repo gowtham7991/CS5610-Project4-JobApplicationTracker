@@ -36,7 +36,7 @@ const Profile = () => {
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                     className="rounded-circle img-fluid"/>
                     <h5 className="my-3">{`${data.name.firstName} ${data.name.lastName}`}</h5>
-                    <p className="text-muted mb-1">{profileData.positionName}</p>
+                    <p className="text-muted mb-1">{profileData.position}</p>
                     <p className="text-muted mb-4">{profileData.address}</p>
                 </div>
                 </div>
@@ -93,7 +93,7 @@ const Profile = () => {
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center p-3">
                                 <i className="fab fa-linkedin fa-lg" ></i>
-                                <p className="mb-0">{`${data.name.firstName} ${data.name.lastName}`}</p>
+                                <p className="mb-0"><a href={profileData.linkedInURL}>visit site</a></p>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center p-3">
                                 <i className="fab fa-twitter fa-lg" ></i>

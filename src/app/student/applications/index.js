@@ -12,7 +12,8 @@ const ApplicationList = () => {
     useEffect(() => {
         dispatch(findApplicationsThunk(userDetails._id))
     }, [])
-
+    console.log(applications)
+    
     return(
         <div className="container">
             {

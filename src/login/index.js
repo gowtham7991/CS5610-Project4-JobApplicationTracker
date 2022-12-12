@@ -67,6 +67,14 @@ const LoginPage = () => {
                                 <input type="password" className="form-control" id="exampleInputPassword1" 
                                     placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                             </div>
+                            <div class="form-group mt-4">
+                                <label for="role" className="form-label"><b>Role</b></label>
+                                <select id="role" className="form-control">
+                                    <option>Student</option>
+                                    <option>Recruiter</option>
+                                    <option>Admin</option>
+                                </select>
+                            </div>
                             <div className="form-submit">
                                 <div className="mt-4 ml-2 mr-2">
                                     <button type="submit" className ="btn btn-primary w-100">Log In</button>
