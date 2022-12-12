@@ -26,7 +26,7 @@ const JobSummaryCard = (job) => {
                     <i className="fa fa-user" aria-hidden="true"></i>
                     <small className="mx-2 text-muted">{`${data.applicants.length} applicants`}</small>
                 </div>
-                <Link to={`detail/${data._id}`}>view job</Link>
+                <Link to={`/app/jobs/detail/${data._id}`}>view job</Link>
                 <hr />
                 <div>
                     <i class="fa fa-star-o mx-3" aria-hidden="true"></i>

@@ -11,6 +11,7 @@ import { findApplicationsByJobId } from "../../../services/applications/applicat
 const JobDetail = () => {
     const dispatch = useDispatch()
     const userDetails = useSelector(state => state.loginData).userDetails
+    const isLoggedIn = useSelector(state => state.loginData).isLoggedIn
     const jobDetails = useSelector(state => state.jobsData).jobDetails
     const isLoading = useSelector(state => state.jobsData).isJobDetailLoading
     const urlParams = useParams();
@@ -48,14 +49,18 @@ const JobDetail = () => {
                 <div className="col-1 wd-company-logo">
                     <img src={`https://github.com/gowtham7991/CS5610-Project4-JobApplicationTracker/blob/main/src/assets/logos/${jobDetails.company.toLowerCase()}.png?raw=true`}/>
                 </div>
-                <div className="col-10 wd-section-header">
+                <div className="col-9 wd-section-header">
                     <h1>{jobDetails.positionName}</h1>
                     <div className="text-muted">{jobDetails.company}</div>
                     <div className="text-muted">{jobDetails.positionType}</div>
                 </div>
-                <div className="col-1 wd-apply-section">
+                <div className="col-2 wd-apply-section">
                     <div>
-                        <button className="btn btn-primary btn-sm rounded-pill" onClick={applyHandler}>Apply</button>
+                        <button className="btn btn-primary btn-sm rounded-pill" onClick={applyHandler} disabled={isLoggedIn ? false : true}>Apply</button>
+                       <div>
+                       <small className={`d-${isLoggedIn ? "none" : ""}`} style={{fontSize: "14px", color:"red"}}>please login/register to apply</small>
+
+                        </div> 
                     </div>
                 </div>
             </div>
