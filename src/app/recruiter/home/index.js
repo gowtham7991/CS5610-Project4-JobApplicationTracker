@@ -9,8 +9,8 @@ const Home = () => {
 
     return (
         <div>
-            <div className="wd-content container">
-                <h3>{`Welcome, ${userDetails.name.firstName} ${userDetails.name.lastName}!`}</h3>
+            <div className="wd-content container p-5">
+                <h3>{`Welcome ${userDetails.name.firstName} ${userDetails.name.lastName}!`}</h3>
 
                 <div className="py-4">
                     <img src={bannerImg} className="w-100" id="carousel"/>
