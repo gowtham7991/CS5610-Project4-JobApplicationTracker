@@ -47,7 +47,7 @@ const JobList = () => {
     }
 
     return(
-        <div className="container">
+        <div className="container p-3">
             <div className="row">
                     <div className="col">
                         <nav aria-label="breadcrumb" className="bg-light rounded-3 p-3 mb-4">
@@ -115,10 +115,10 @@ const JobList = () => {
             !isLoading &&
             <div>
                 
-            <div className="border">
-                <div className="grid-container">
+            <div className="">
+                <div className="row">
                     {jobs.length > 0 && jobs.map(job => 
-                        <div className="grid-item">
+                        <div className="col-lg-4 col-sm-12 p-2">
                             <Job data={job}/>
                         </div>)
                     }

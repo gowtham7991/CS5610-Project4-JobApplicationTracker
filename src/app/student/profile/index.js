@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { findProfileByIdThunk } from "../../../services/profile/profile-thunks";
+import profilePic from "../../../assets/profile.png"
 
 const Profile = () => {
     const userDetails = useSelector(state => state.loginData).userDetails
@@ -31,23 +32,23 @@ const Profile = () => {
                 </div>
 
                 <div className="row">
-                <div className="col-lg-4">
-                    <div className="card mb-4">
-                    <div className="card-body text-center">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                        className="rounded-circle img-fluid"/>
-                        <h5 className="my-3">{`${data.name.firstName} ${data.name.lastName}`}</h5>
-                        <p className="text-muted mb-1">Student</p>
-                        <p className="text-muted mb-4">{profileData.address}</p>
-                        <div className="d-flex justify-content-center mb-2">
-                            <Link to="../edit-profile" className="btn btn-outline-primary">Edit Profile</Link>
-                        
+                    <div className="col-lg-4 col-sm-12">
+                        <div className="card mb-4">
+                        <div className="card-body text-center">
+                            <img src={profilePic} alt="avatar"
+                            className="rounded-circle img-fluid"/>
+                            <h5 className="my-3">{`${data.name.firstName} ${data.name.lastName}`}</h5>
+                            <p className="text-muted mb-1">Student</p>
+                            <p className="text-muted mb-4">{profileData.address}</p>
+                            <div className="d-flex justify-content-center mb-2">
+                                <Link to="../edit-profile" className="btn btn-outline-primary">Edit Profile</Link>
+                            
+                            </div>
                         </div>
+                        </div>
+                        
                     </div>
-                    </div>
-                    
-                </div>
-                <div className="col-lg-8">
+                <div className="col-lg-8 col-sm-12">
                     <div className={`d-${uid === userDetails._id ? "" : "none"} card mb-4`}>
                     <div className="card-body">
                         <div className="row">
@@ -97,7 +98,7 @@ const Profile = () => {
                         </div>
                         </div>
                     <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                             <div className="card mb-4 mb-lg-0">
                                 <div className="card-body p-0">
                                     <ul className="list-group list-group-flush rounded-3">
@@ -125,7 +126,7 @@ const Profile = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 col-sm-12">
                             <div className="card mb-4 mb-md-0 p-2">
                             <div className="card-body">
                                 

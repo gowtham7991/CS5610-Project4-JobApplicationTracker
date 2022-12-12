@@ -6,3 +6,8 @@
   row-gap: 25px;
   background-color: white;
 }
+
+.wd-external-jobs .card {
+  height: 100%;
+  width: 100%;
+}

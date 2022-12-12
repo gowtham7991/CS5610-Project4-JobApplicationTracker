@@ -22,8 +22,8 @@ const App = () => {
         <div >
             <div className="d-flex justify-content-between wd-main-navbar bg-light shadow p-4">
                 <div>
-                    <a class="navbar-brand" href="#">
-                        <img src={logo} alt="" width="200" height="50" class="d-inline-block align-text-top"/>
+                    <a className="navbar-brand" href="#">
+                        <img src={logo} alt="" width="200" height="50" className="d-inline-block align-text-top"/>
                     </a>
                 </div>
                 <div className="d-flex">
@@ -31,9 +31,9 @@ const App = () => {
                     <button className="btn btn-primary rounded-pill mx-5" onClick={signUpHandler}>Sign up</button>
                 </div>
             </div>
-            <div className = "wd-main-content mt-5 mx-auto p-5 container">
+            <div className = "wd-main-content mt-5 mx-auto container">
                 <div className = "row">
-                    <div className="col">
+                    <div className="col-lg-6 col-sm-12">
                         <div className="">
                             <h1 className="heading1">
                                 Finding jobs has never been easier.
@@ -47,19 +47,19 @@ const App = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col">
-                        <img src={jobsImage}></img>
+                    <div className="col-lg-6 col-sm-12">
+                        <img src={jobsImage} style={{height:"100%", width:"100%"}}></img>
                     </div>
                 </div>
             </div>
             <div className="p-2" style={{height: "300px", textAlign: "center", color: "white", backgroundColor: "#003C3C"}}>
                 <h3 className="text-center">Featured Companies</h3>
                 <div className="d-flex justify-content-between p-2">
-                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i class="fa fa-twitter-square" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
-                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i class="fa fa-facebook-official" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
-                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i class="fa fa-amazon" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
-                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i class="fa fa-windows" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
-                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i class="fa fa-linkedin-square" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
+                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i className="fa fa-twitter-square" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
+                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i className="fa fa-facebook-official" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
+                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i className="fa fa-amazon" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
+                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i className="fa fa-windows" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
+                    <div className="wd-logo p-2"><span style={{fontSize: "30px"}}></span><i className="fa fa-linkedin-square" aria-hidden="true" style={{fontSize:"60px"}}></i></div>
                 </div>
             </div>
             <div className="p-5">

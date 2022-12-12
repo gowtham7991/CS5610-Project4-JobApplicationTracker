@@ -27,9 +27,12 @@ const ApplicationList = () => {
             </nav>
             <ul className="list-group">
             {
-                applications.map(application => 
+                applications.length > 0 && applications.map(application => 
                     <ApplicationItem key={application._id} data={application}/>
                     )
+            }
+            {
+                applications.length === 0 && <p>no applications found</p>
             }
         </ul>
                 </div>

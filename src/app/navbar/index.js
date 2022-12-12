@@ -27,6 +27,10 @@ const NavBar = () => {
                     <div className="d-flex">
                         <button className="btn btn-outline-secondary rounded-pill mx-2" onClick={logOutHandler}>Log out</button>
                     </div>
+                    <div className="d-flex align-items-center me-2">
+                        <p className="h6">{userDetails.name.firstName + " " + userDetails.name.lastName}</p>
+
+                    </div>
                     <div className="wd-avatar-container d-flex align-items-center justify-content-center">
                         <i class="wd-avatar fa fa-user" aria-hidden="true"></i>
                     </div>

@@ -6,6 +6,7 @@ import { saveProfileThunk } from "../../../services/profile/profile-thunks";
 import { findProfileByIdThunk } from "../../../services/profile/profile-thunks";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import profilePic from "../../../assets/profile.png"
 
 const EditProfile = () => {
     const data = useSelector(state => state.profileData).profileDetails
@@ -83,7 +84,7 @@ const EditProfile = () => {
             <div className="row text-center mt-2"><p className="h4 text-center">Profile Settings</p></div>
             <div className="row">
                 <div className="col-md-3 border-right">
-                    <div className="d-flex flex-column align-items-center text-center p-3 py-5"><img className="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"/><span className="font-weight-bold">{`${userDetails.name.firstName} ${userDetails.name.lastName}`}</span><span className="text-black-50">{userDetails.email}</span><span> </span></div>
+                    <div className="d-flex flex-column align-items-center text-center p-3 py-5"><img className="rounded-circle mt-5" width="150px" src={profilePic}/><span className="font-weight-bold">{`${userDetails.name.firstName} ${userDetails.name.lastName}`}</span><span className="text-black-50">{userDetails.email}</span><span> </span></div>
                 </div>
                 <div className="col-md-5 border-right">
                     <div className="p-3 py-5">

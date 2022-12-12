@@ -13,9 +13,9 @@ const CompanyList = () => {
     }, [])
 
     return(
-        <div className="grid-container">
+        <div className="row">
             {companies.map(company => 
-                <div className="grid-item">
+                <div className="col-lg-4 col-sm-12 p-2 col-md-6">
                     <CompanyCard data={company}/>
                 </div>)
             }

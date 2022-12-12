@@ -1,11 +1,13 @@
 
-.wd-content #carousel {
-    height: 50vh
-}
 
 .wd-icon-container {
     background-color: #51ACC5;
     width: 2rem;
     opacity: 0.8;
     margin-bottom: 5px;
+}
+
+.wd-content .card {
+    height: 100%;
+    width: 100%;
 }

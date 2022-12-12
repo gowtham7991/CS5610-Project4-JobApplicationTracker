@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_BASE = "http://localhost:4000";
+const API_BASE = process.env.SERVER_URL || "http://localhost:4000";
 const LOGIN_API = `${API_BASE}/login`;
 
 export const login = async (userCredentials) => {

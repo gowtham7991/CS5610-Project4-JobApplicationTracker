@@ -37,7 +37,7 @@ const StudentRegisterPage = () => {
     return (
         <div>
             <div className="row m-0 wd-login-page">
-                <div className="col-7 wd-form-container p-0">
+                <div className="col-lg-7 col-sm-12 wd-form-container p-0">
                     <div className="wd-logo-container p-2">
                         <Link to="/">
                             <img src={logo} style={{width:"10rem", height:"3rem"}}/>
@@ -88,7 +88,7 @@ const StudentRegisterPage = () => {
                     </div>
                 </div>
                 
-                <div className="col wd-bgimage p-0">
+                <div className="col-lg-5 col-sm-12 wd-bgimage p-0">
                     <img src={bgImage} width="100%" height="100%"/>
                 </div>
             </div>

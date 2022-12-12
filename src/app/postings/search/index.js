@@ -20,7 +20,7 @@ const Postings = () => {
     return(
         <div className="container">
             <p className="h5">Recent Postings</p>
-            <div className="border">
+            <div className="">
                 <div className="row">
                     <div className="col">
                         <nav aria-label="breadcrumb" className="bg-light rounded-3 p-3 mb-4">
@@ -31,9 +31,9 @@ const Postings = () => {
                         </nav>
                     </div>
                 </div>
-                <div className="grid-container">
+                <div className="row">
                     {posts.length > 0 && posts.map(posting => 
-                        <div className="grid-item">
+                        <div className="col-lg-4 col-sm-12">
                             <Post data={posting}/>
                         </div>)
                     }

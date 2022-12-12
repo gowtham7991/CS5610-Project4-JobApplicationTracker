@@ -36,7 +36,7 @@ const JobList = () => {
     }, [])
 
     return(
-        <div className="container">
+        <div className="wd-external-jobs container p-3">
             <div className="row">
                     <div className="col">
                         <nav aria-label="breadcrumb" className="bg-light rounded-3 p-3 mb-4">
@@ -83,10 +83,10 @@ const JobList = () => {
                 <div>
                     
             
-            {jobs && <div className="border">
-                <div className="grid-container">
+            {jobs && <div className="">
+                <div className="row m-0">
                     {jobs.length > 0 && jobs.map(job =>
-                        <div className="grid-item">
+                        <div className="col-lg-4 col-sm-12 p-2">
                             <Job job = {job}/>
                         </div>)
                     }
