@@ -29,7 +29,6 @@ const store = configureStore(
 )
 
 function App() {
-  console.log(process.env.REACT_APP_API_BASE)
   return (
     <Provider store={store}>
       <div className='App'>

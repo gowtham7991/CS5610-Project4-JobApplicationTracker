@@ -11,7 +11,6 @@ const PostSummaryCard = (post) => {
         dispatch(deletePostingThunk(data._id))
 
     }
-    console.log(data)
     return(
         <div class="card">
             <div class="d-flex algin-center card-header p-3">

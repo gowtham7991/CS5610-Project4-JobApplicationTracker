@@ -9,7 +9,6 @@ const ApplicationList = () => {
     const dispatch = useDispatch()
     const applications = useSelector(state => state.applicationsData).applications
     const jobId = params.jobId;
-    console.log(jobId)
     useEffect(() => {
         dispatch(findApplicationsByJobIdThunk(jobId))
     }, [])

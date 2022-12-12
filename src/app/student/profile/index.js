@@ -13,7 +13,6 @@ const Profile = () => {
     const dispatch = useDispatch()
     const uid = params.hasOwnProperty("uid") ? params.uid : userDetails._id
     useEffect(() => {dispatch(findProfileByIdThunk(uid))}, [])
-    console.log(uid)
     
     return(
         <section>

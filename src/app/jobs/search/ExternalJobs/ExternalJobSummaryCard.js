@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 
 const ExternalJobSummaryCard = ({job}) => {
     const userDetails = useSelector(state => state.loginData).userDetails
-    console.log(userDetails.role)
-    console.log({job})
     return (
         <div className="grid-item">
             <div class="card">

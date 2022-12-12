@@ -37,7 +37,6 @@ const PostingForm = () => {
     
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    console.log(userDetails)
     const createJobHandler = (e) => {
         e.preventDefault();
         const skillsSelected = skills.map(s => s.value)
@@ -56,7 +55,6 @@ const PostingForm = () => {
             jobLength: duration,
             pay: pay,
         }
-        console.log(jobDetails)
         dispatch(createJobThunk(jobDetails))
         navigate("../../postings")
     }

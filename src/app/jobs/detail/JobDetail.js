@@ -31,8 +31,6 @@ const JobDetail = () => {
         // dispatch(findApplicationsByJobId(userDetails._id))        
     }
 
-    console.log(jobDetails)
-    console.log(isLoading)
     return(
         <div className="container">
             {

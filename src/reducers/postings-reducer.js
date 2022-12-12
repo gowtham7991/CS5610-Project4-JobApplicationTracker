@@ -31,7 +31,6 @@ const postingSlice = createSlice({
         [findPostingsByCompanyThunk.fulfilled]:
         (state, {payload}) => {
             state.isLoading = false
-            console.log(payload)
             state.postings = payload
         },
         [findPostingsByCompanyThunk.rejected]:

@@ -11,7 +11,6 @@ const Postings = () => {
     const isLoading = useSelector(state => state.postingData).isLoading
     const params = useParams()
     const dispatch = useDispatch()
-    console.log(userDetails)
     const companyId = params.hasOwnProperty("companyId") ? params.companyId : userDetails.companyId
     useEffect(() => {
         dispatch(findPostingsByCompanyThunk(companyId))

@@ -26,7 +26,6 @@ const RecuiterRegisterPage = () => {
             company,
             role
         }
-        console.log(registrationDetails)
     }
     return (
         <div>

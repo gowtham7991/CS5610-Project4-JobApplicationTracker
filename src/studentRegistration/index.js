@@ -29,7 +29,6 @@ const StudentRegisterPage = () => {
             "dob": dob
         }
 
-        console.log(registrationDetails)
         dispatch(studentRegistrationThunk(registrationDetails));
         navigate('/login')
     }

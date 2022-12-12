@@ -12,7 +12,6 @@ const JobList = () => {
     const [country, setCountry] = useState('US');
     const [sort_by, setSortBy] = useState('date');
     const jobs = useSelector(state => state.jobsData.externalJobs)
-    console.log(jobs)
     const isLoading = useSelector(state => state.jobsData).isExternalJobListLoading
     const dispatch = useDispatch();
     
